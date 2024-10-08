@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "seminar03.html#attendance",
+    "href": "seminar03.html#attendance",
+    "title": "Seminar 03",
+    "section": "Attendance",
+    "text": "Attendance"
+  },
+  {
+    "objectID": "seminar03.html#reminders",
+    "href": "seminar03.html#reminders",
+    "title": "Seminar 03",
+    "section": "Reminders",
+    "text": "Reminders\n\nDiscuss labs, R, and RStudio at Thu workshop.\nDiscuss worksheet 2 at Fri workshop.\nLab 1 due Fri 2024-10-04 at 17:00."
+  },
+  {
+    "objectID": "seminar03.html#outline-of-today",
+    "href": "seminar03.html#outline-of-today",
+    "title": "Seminar 03",
+    "section": "Outline of today   ",
+    "text": "Outline of today   \n\nOverview of tools for drawing conclusions about the characteristics of a population from data:\n\npoint estimates\nconfidence intervals\nhypothesis tests\n\nWhy 0.05?   \n\n\nOver next two seminars we will consider these concepts in general (to familiarize with language, notation, etc).\nThen we will focus on inferences in specific contexts."
+  },
+  {
+    "objectID": "seminar03.html#recall",
+    "href": "seminar03.html#recall",
+    "title": "Seminar 03",
+    "section": "Recall",
+    "text": "Recall"
+  },
+  {
+    "objectID": "seminar03.html#what-is-a-statistic",
+    "href": "seminar03.html#what-is-a-statistic",
+    "title": "Seminar 03",
+    "section": "What is a statistic?",
+    "text": "What is a statistic?\nA statistic is a quantity that can be calculated from sample data.\nPrior to obtaining data, a statistic is an unknown quantity and is therefore a random variable (rv).\n\n\nLet’s look at some examples."
+  },
+  {
+    "objectID": "seminar03.html#examples-of-statistics",
+    "href": "seminar03.html#examples-of-statistics",
+    "title": "Seminar 03",
+    "section": "Examples of statistics",
+    "text": "Examples of statistics\nViewed as estimators for characteristics of the population.\n\nsample mean, \\overline{X} = \\frac{1}{m} \\sum_{i=1}^m X_i\nsample variance, S^2 = \\frac{1}{m-1} \\sum_{i=1}^m (X_i - \\overline{X})^2\navg of extreme lengths, \\widetilde{X} = \\frac{\\min_{i\\geq 0}(X_i) + \\max_{i\\geq 0}(X_i)}{2}\n\n\n\n\n\n\n\nRandom variables have distributions\n\n\nAny function of rvs X_i is also a rv and, therefore, has a probability distribution."
+  },
+  {
+    "objectID": "seminar03.html#sampling-distributions",
+    "href": "seminar03.html#sampling-distributions",
+    "title": "Seminar 03",
+    "section": "Sampling distributions",
+    "text": "Sampling distributions\nWe refer to the probability distribution for a statistic as a sampling distribution to emphasize how the distribution will vary across all possible sample data."
+  },
+  {
+    "objectID": "seminar03.html#a-point-estimator",
+    "href": "seminar03.html#a-point-estimator",
+    "title": "Seminar 03",
+    "section": "A point estimator",
+    "text": "A point estimator\nConsider iid X_1, X_2, \\dots, X_m \\sim F(\\theta)\\,.\nA point estimator \\widehat{\\theta}_m of \\theta is obtained by selecting a suitable statistic g\\,, \n  \\widehat{\\theta}_m = g(X_1, \\dots, X_m) \\,.\n\n\n\nConsider rvs X_i \\sim F(\\theta) (general distribution)\nRecall \\theta a fixed, unknown quantity\nNOTE X_i ARE RVS! not observations (data points)"
+  },
+  {
+    "objectID": "seminar03.html#closing-the-deal-point-estimate",
+    "href": "seminar03.html#closing-the-deal-point-estimate",
+    "title": "Seminar 03",
+    "section": "Closing the deal: point estimate",
+    "text": "Closing the deal: point estimate\nA point estimate of a parameter \\theta is a single number that we regard as a sensible value for \\theta\\,.\nA point estimate \\widehat{\\theta}_m is computed from an estimator using sample data.\n\n\n\n\n\n\nOverloaded notation\n\n\nThe symbol \\widehat{\\theta}_m is typically used to denote both the estimator and the point estimate resulting from a given sample.\n\n\n\n\n\nLikewise, we refer to statistics: used for both the estimator and the estimate.\nWriting \\widehat{\\theta} = 42 does not indicate how the point estimate was obtained; therefore, it is essential to report both the estimator and the resulting point estimate.\nIn addition, we should also report a measure of precision in our estimate."
+  },
+  {
+    "objectID": "seminar03.html#uncertainty-in-a-point-estimate",
+    "href": "seminar03.html#uncertainty-in-a-point-estimate",
+    "title": "Seminar 03",
+    "section": "Uncertainty in a point estimate",
+    "text": "Uncertainty in a point estimate\n\nThe standard error is one measure of the precision of an estimate.\nThe standard error of an estimator \\widehat{\\theta} is the standard deviation: \n\\sigma_{\\widehat{\\theta}} = \\sqrt{\\mathop{\\mathrm{Var}}(\\widehat{\\theta})}\\,.\n\nEstimated standard error is denoted by \\widehat{\\sigma}_{\\widehat{\\theta}} or simply s_{\\widehat{\\theta}}\\,.\n\n\n\nOften, the standard error depends on unknown parameters and must also be estimated.\nStandard error is sometimes denoted \\mathsf{se} = \\mathsf{se}(\\widehat{\\theta}) and the estimated standard error by \\widehat{\\mathsf{se}}\\,."
+  },
+  {
+    "objectID": "seminar03.html#a-confidence-interval",
+    "href": "seminar03.html#a-confidence-interval",
+    "title": "Seminar 03",
+    "section": "A confidence interval",
+    "text": "A confidence interval\n\nAn interval estimate reports an entire range of plausible values for the parameter of interest.\nA confidence interval (CI) is an interval estimate that makes a probability statement about the degree of reliability, or the confidence level, of the interval.\n\n\n\nAlternative to reporting a point estimate for a parameter!"
+  },
+  {
+    "objectID": "seminar03.html#ci-definition",
+    "href": "seminar03.html#ci-definition",
+    "title": "Seminar 03",
+    "section": "CI definition",
+    "text": "CI definition\nA 100(1-\\alpha)\\% confidence interval for a parameter \\theta is a random interval, C_m = (L_m , U_m)\\,, where L_m = \\ell(X_1, \\dots, X_m) and U_m = u(X_1, \\dots, X_m) are functions of the data, such that, \n  P_{\\theta}(L_m &lt; \\theta &lt; U_m ) = 1 - \\alpha\\,,\n for all \\theta \\in \\Theta (the parameter space).\n\n\nThe CI represents values for the population parameter for which the difference between the parameter and the observed estimate is not statistically significant at the \\alpha level.\nIf the true value of the parameter lies outside the 100(1-\\alpha)\\% confidence interval, then a sampling event has occurred (namely, obtaining a point estimate of the parameter at least this far from the true parameter value) which had a probability of 100\\alpha\\% (or less) of happening by chance.\nNot a probability statement about the parameter \\theta\\,.\nNote that \\theta is fixed (\\theta is not a rv) and the interval C_m is random.\nAfter data has been collected and a point estimator has been calculated, the resulting CIs either contain the true parameter value or they do not."
+  },
+  {
+    "objectID": "seminar03.html#what-a-ci-is-not",
+    "href": "seminar03.html#what-a-ci-is-not",
+    "title": "Seminar 03",
+    "section": "What a CI is not…",
+    "text": "What a CI is not…\n\nA 95\\% confidence level does not mean there is a 95\\% probability that the population parameter lies within a given interval.\nA 95\\% confidence level does not mean that 95\\% of the sample data lie within the confidence interval.\nA particular confidence level of 95\\% calculated from an experiment does not mean that there is a 95\\% probability of a sample parameter from a repeat of the experiment falling within this interval.\n\n\n\nNothing special about the number 95 here.\nFor 1st: i.e., a 95% probability that the interval covers the population parameter.\nOnce an interval is calculated, this interval either covers the parameter value or it does not!"
+  },
+  {
+    "objectID": "seminar03.html#two-hypotheses",
+    "href": "seminar03.html#two-hypotheses",
+    "title": "Seminar 03",
+    "section": "Two hypotheses",
+    "text": "Two hypotheses\nMethods for determining which of two contradictory claims, or hypotheses, about a parameter is correct.\n\nH_0 the null hypothesis is a claim that we initially assume to be true by default.\nH_a the alternative hypothesis is an assertion that is contradictory to H_0\\,.\n\n\n\nTypically, we shall consider hypothesis concerning a parameter \\theta \\in \\Theta taking values in a parameter space.\nThe statistical hypothesis are contradictory in that H_0 and H_a divide \\Theta into two disjoint sets."
+  },
+  {
+    "objectID": "seminar03.html#hypothesis-testing",
+    "href": "seminar03.html#hypothesis-testing",
+    "title": "Seminar 03",
+    "section": "Hypothesis testing",
+    "text": "Hypothesis testing\n\nA hypothesis test is a statistical procedure.\nThe test procedure is based on the initial assumption that H_0 is true and asks if the available data provides sufficient evidence to reject H_0\\,.\nIf the observations disagree with H_0\\,, then we reject the null hypothesis. On the other hand, if the sample evidence does not strongly contradict H_0\\,, then we continue to believe H_0\\,.\n\n\n\n\n\n\n\nNo “accepting” the null\n\n\nThe two possible conclusions of a hypothesis test are: reject H_0 or fail to reject H_0\\,.\n\n\n\n\n\nFail to reject H_0 is sometimes phrased retain H_0 or (perhaps less accurately) accept H_0\nWhy not just accept the null and move on with our lives? Well, if I search the Highlands for the Scottish wildcat (critically endangered) and fail to find any, does that prove they do not exist?"
+  },
+  {
+    "objectID": "seminar03.html#know-when-to-fold-em",
+    "href": "seminar03.html#know-when-to-fold-em",
+    "title": "Seminar 03",
+    "section": "Know when to fold ’em",
+    "text": "Know when to fold ’em\n\nWhat does evidence for a hypothesis test look like?\nA test statistic T is a function of the sample data (like an estimator).\nThe decision to reject or fail to reject H_0 will involve computing the test statistic."
+  },
+  {
+    "objectID": "seminar03.html#how-extreme-is-the-evidence",
+    "href": "seminar03.html#how-extreme-is-the-evidence",
+    "title": "Seminar 03",
+    "section": "How extreme is the evidence?",
+    "text": "How extreme is the evidence?\n\nA rejection region R is the collection of values of the test statistic for which H_0 is to be rejected in favor of the alternative: \nR = \\left\\{ x : T(x) &gt; c \\right\\}\\,,\n where c is referred to as a critical value.\nFor observed test statistic t, if t \\in R then we reject H_0\\,. The alternative is that t \\not\\in R and in this case we fail to reject H_0\\,.\n\n\n\nA procedure for carrying out a hypothesis test is based on specifying two additional items:\n\ntest statistic\ncorresponding rejection region.\n\nIf a given sample falls in the rejection region, then we reject H_0\\,.\nIf X \\in R then the calculated test statistic exceeds some critical value."
+  },
+  {
+    "objectID": "seminar03.html#recall-critical-values",
+    "href": "seminar03.html#recall-critical-values",
+    "title": "Seminar 03",
+    "section": "Recall: critical values",
+    "text": "Recall: critical values\nCritical values are quantiles of the reference distribution. Critical values are NOT areas.\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing R: q+distname, e.g., qnorm, qt, qchisq, …\nUsing table\n\n\n\n\n\n\\chi^2 distribution is not symmetric! \\mathsf{N} and \\mathsf{t} are symmetric.\nFor \\alpha/2 = 0.025\\,, z_{\\alpha/2} = 1.96\\,."
+  },
+  {
+    "objectID": "seminar03.html#balancing-act",
+    "href": "seminar03.html#balancing-act",
+    "title": "Seminar 03",
+    "section": "Balancing act",
+    "text": "Balancing act\nThe basis for choosing a rejection region involves balancing Type I and Type II errors. A conclusion is reached in a hypothesis test by selecting a significance level \\alpha for the test linked to the maximal type I error rate.\n\nType I error occurs if H_0 is rejected when H_0 is actually true.\nType II error is made if we fail to reject H_0 when H_0 is actually false.\n\n\n\nFix \\alpha first!"
+  },
+  {
+    "objectID": "seminar03.html#how-do-p-values-fit",
+    "href": "seminar03.html#how-do-p-values-fit",
+    "title": "Seminar 03",
+    "section": "How do P-values fit?",
+    "text": "How do P-values fit?\nA P-value is the probability, assuming H_0 is true, of obtaining a test statistic at least as contradictory to H_0 as the value calculated from the sample data.\nSmaller P-values indicate stronger evidence against H_0\\,.\n\nIf P \\leq \\alpha then we reject H_0 at significance level \\alpha\\,.\nIf P \\geq \\alpha we fail to reject H_0 at significance level \\alpha\\,."
+  },
+  {
+    "objectID": "seminar03.html#the-skinny-on-hypothesis-testing",
+    "href": "seminar03.html#the-skinny-on-hypothesis-testing",
+    "title": "Seminar 03",
+    "section": "The skinny on hypothesis testing",
+    "text": "The skinny on hypothesis testing\n\n\n\n\n\n\nTwo routes to the same answer!\n\n\nBut both are really the same.\n\n\n\nOne way:\n\nCompute the value of an appropriate test statistic.\nDetermine the P-value, probability calculated assuming the null is true of observing a test statistic value at least as contradictory to H_0 as what was obtained from data.\nFor given \\alpha\\,, reject H_0 if evidence is strong, i.e. P &lt; \\alpha\\,. If evidence is not strong enough, fail to reject H_0\\,."
+  },
+  {
+    "objectID": "seminar03.html#the-skinny-on-hypothesis-testing-1",
+    "href": "seminar03.html#the-skinny-on-hypothesis-testing-1",
+    "title": "Seminar 03",
+    "section": "The skinny on hypothesis testing",
+    "text": "The skinny on hypothesis testing\n\n\n\n\n\n\nTwo routes to the same answer!\n\n\nBut both are really the same.\n\n\n\nAnother way:\n\nCompute the value of an appropriate test statistic.\nDetermine the critical value for the level \\alpha and hence identify the rejection region for the hypothesis test.\nIf statistic falls in rejection region, reject H_0 because evidence is strong. If statistic falls outwith rejection region, we fail to reject H_0 because evidence is not strong enough."
+  },
+  {
+    "objectID": "seminar03.html#null-distribution",
+    "href": "seminar03.html#null-distribution",
+    "title": "Seminar 03",
+    "section": "Null distribution",
+    "text": "Null distribution\n\n\n\n\nE.g., consider hypothesis tests for a population mean.\n\nDistribution for \\bar{X}\nUnder the assumption that H_0 is true, so curve is centered at \\mu_0\nLevel \\alpha is a probability (area)\nCritical value c is a point\nTest statistic?"
+  },
+  {
+    "objectID": "seminar03.html#emily-dickinson-and-monkeys-on-the-stair",
+    "href": "seminar03.html#emily-dickinson-and-monkeys-on-the-stair",
+    "title": "Seminar 03",
+    "section": "Emily Dickinson and monkeys on the stair",
+    "text": "Emily Dickinson and monkeys on the stair\n\nSarah Lee, Wikimedia Commons, CC-BY-SA 4.0"
+  },
+  {
+    "objectID": "seminar03.html#personal-significance-level",
+    "href": "seminar03.html#personal-significance-level",
+    "title": "Seminar 03",
+    "section": "Personal significance level",
+    "text": "Personal significance level\nWhat is our MA22004 personal significance level?\nwww.openintro.org/book/stat/why05/"
+  }
+]

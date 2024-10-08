@@ -1,0 +1,391 @@
+---
+title: "Seminar 03"
+subtitle: "MA22004"
+date: "2024-10-02"
+author: "Dr Eric Hall   •   ehall001@dundee.ac.uk"
+format: 
+  revealjs:
+    chalkboard: true
+    html-math-method: katex
+    theme: [default, resources/custom.scss]
+    css: resources/fonts.css
+    logo: resources/logo.png
+    footer: ""
+    template-partials:
+      - resources/title-slide.html
+    transition: slide
+    background-transition: fade
+from: markdown+emoji
+lang: en
+---
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(echo = FALSE, comment = "", fig.asp = .5)
+library(tidyverse)
+library(latex2exp)
+library(knitr)
+library(kableExtra)
+library(janitor)
+library(fontawesome)
+library(latex2exp)
+```
+
+# Announcements {.mySegue .center}
+:::{.hidden}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{\mathbf{E}}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\corr}{corr}
+\newcommand{\se}{\mathsf{se}}
+\DeclareMathOperator{\sd}{sd}
+:::
+
+## Attendance
+
+::: {layout="[[-1], [1], [-1]]"}
+![](images/seats.png){fig-align="center" fig-alt="Register your attendance using SEAtS"}
+:::
+
+## Reminders 
+
+- Discuss labs, R, and RStudio at Thu workshop. 
+- Discuss worksheet 2 at Fri workshop.
+- Lab 1 due **Fri 2024-10-04** at **17:00**. 
+
+
+## Outline of today &nbsp;&nbsp;`r fa("compass")`
+
+1. Overview of tools for drawing conclusions about the characteristics of a population from data:
+   -  point estimates
+   -  confidence intervals
+   -  hypothesis tests
+
+2. Why 0.05? &nbsp;&nbsp;`r fa("lightbulb")`
+
+
+:::{.notes}
+Over next two seminars we will consider these concepts in general (to familiarize with language, notation, etc). 
+
+Then we will focus on inferences in specific contexts. 
+:::
+
+## Recall {.mySegue .center}
+
+## What is a statistic?
+
+A statistic is a quantity that can be calculated from sample data.
+
+Prior to obtaining data, a statistic is an unknown quantity and is therefore a random variable (rv).
+
+:::{.notes}
+- Let's look at some examples. 
+:::
+
+## Examples of statistics
+
+Viewed as *estimators* for characteristics of the population.
+
+- sample mean, $\overline{X} = \frac{1}{m} \sum_{i=1}^m X_i$
+- sample variance, $S^2 = \frac{1}{m-1} \sum_{i=1}^m (X_i - \overline{X})^2$
+- avg of extreme lengths, $\widetilde{X} = \frac{\min_{i\geq 0}(X_i) + \max_{i\geq 0}(X_i)}{2}$
+
+:::{.callout-warning}
+## Random variables have distributions
+
+Any function of rvs $X_i$ is also a rv and, therefore, has a probability distribution.
+:::
+
+## Sampling distributions
+
+We refer to the probability distribution for a statistic as a sampling distribution to emphasize how the distribution will vary across all possible sample data.
+
+# What are point estimates? {.mySegue .center}
+
+## A point estimator
+
+Consider iid $X_1, X_2, \dots, X_m \sim F(\theta)\,.$ 
+
+A point estimator $\widehat{\theta}_m$ of $\theta$ is obtained by selecting a suitable statistic $g\,,$
+$$
+  \widehat{\theta}_m = g(X_1, \dots, X_m) \,.
+$$
+
+:::{.notes}
+- Consider rvs $X_i \sim F(\theta)$ (general distribution)
+- Recall $\theta$ a fixed, unknown quantity
+- NOTE $X_i$ ARE RVS! not observations (data points)
+:::
+
+## Closing the deal: point estimate
+
+A point estimate of a parameter $\theta$ is a single number that we regard as a sensible value for $\theta\,.$ 
+
+A point estimate $\widehat{\theta}_m$ is computed from an estimator using sample data.
+
+:::{.callout-warning}
+## Overloaded notation
+
+The symbol $\widehat{\theta}_m$ is typically used to denote *both* the estimator and the point estimate resulting from a given sample. 
+:::  
+
+:::{.notes}
+- Likewise, we refer to statistics: used for *both* the estimator and the estimate. 
+- Writing $\widehat{\theta} = 42$ does not indicate how the point estimate was obtained; therefore, it is essential to report both the estimator and the resulting point estimate. 
+- In addition, we should also report a measure of precision in our estimate. 
+:::
+
+
+## Uncertainty in a point estimate
+
+- The standard error is one measure of the precision of an estimate. 
+
+- The standard error of an estimator $\widehat{\theta}$ is the standard deviation:
+$$
+  \sigma_{\widehat{\theta}} = \sqrt{\Var(\widehat{\theta})}\,.
+$$
+
+- Estimated standard error is denoted by $\widehat{\sigma}_{\widehat{\theta}}$ or simply $s_{\widehat{\theta}}\,.$
+
+:::{.notes}
+- Often, the standard error depends on unknown parameters and must also be estimated. 
+- Standard error is sometimes denoted $\mathsf{se} = \mathsf{se}(\widehat{\theta})$ and the estimated standard error by $\widehat{\mathsf{se}}\,.$
+:::
+
+
+# What are confidence intervals? {.mySegue .center}
+
+## A confidence interval
+
+- An interval estimate reports an entire range of plausible values for the parameter of interest. 
+
+- A confidence interval (CI) is an interval estimate that makes a probability statement about the degree of reliability, or the confidence level, of the interval.
+
+:::{.notes}
+- Alternative to reporting a point estimate for a parameter!
+:::
+
+## CI definition {.smaller}
+
+A $100(1-\alpha)\%$ confidence interval for a parameter $\theta$ is a *random* interval, $$C_m = (L_m , U_m)\,,$$ where $L_m = \ell(X_1, \dots, X_m)$ and $U_m = u(X_1, \dots, X_m)$ are functions of the data, such that,
+$$
+  P_{\theta}(L_m < \theta < U_m ) = 1 - \alpha\,, 
+$$
+for all $\theta \in \Theta$ (the parameter space). 
+
+:::{.notes}
+- The CI represents values for the population parameter for which the difference between the parameter and the observed estimate is not statistically significant at the $\alpha$ level.
+-  If the true value of the parameter lies outside the $100(1-\alpha)\%$ confidence interval, then a sampling event has occurred (namely, obtaining a point estimate of the parameter at least this far from the true parameter value) which had a probability of $100\alpha\%$ (or less) of happening by chance. 
+- Not a probability statement about the parameter $\theta\,.$ 
+- Note that $\theta$ is fixed ($\theta$ is not a rv) and the interval $C_m$ is random. 
+- After data has been collected and a point estimator has been calculated, the resulting CIs either contain the true parameter value or they do not. 
+:::
+
+## What a  CI is not...
+
+> -  A $95\%$ confidence level does not mean there is a $95\%$ probability that the population parameter lies within a given interval.
+> -  A $95\%$ confidence level does not mean that $95\%$ of the sample data lie within the confidence interval.
+> - A particular confidence level of $95\%$ calculated from an experiment does not mean that there is a $95\%$ probability of a sample parameter from a repeat of the experiment falling within this interval.
+
+
+:::{.notes}
+- Nothing special about the number 95 here. 
+- For 1st: i.e., a 95% probability that the interval covers the population parameter.
+- Once an interval is calculated, this interval either covers the parameter value or it does not!
+:::
+
+
+# What are hypothesis tests? {.mySegue .center}
+
+
+## Two hypotheses
+
+Methods for determining which of two contradictory claims, or *hypotheses*, about a parameter is correct. 
+
+- $H_0$ the **null hypothesis** is a claim that we initially assume to be true by default. 
+- $H_a$ the **alternative hypothesis** is an assertion that is contradictory to $H_0\,.$ 
+
+:::{.notes}
+- Typically, we shall consider hypothesis concerning a parameter $\theta \in \Theta$ taking values in a parameter space. 
+- The statistical hypothesis are contradictory in that $H_0$ and $H_a$ divide $\Theta$ into two disjoint sets.
+:::
+
+## Hypothesis testing {.smaller}
+
+- A hypothesis test is a statistical procedure.
+
+- The test procedure is based on the initial assumption that $H_0$ is **true** and asks if the available data provides sufficient evidence to reject $H_0\,.$ 
+
+- If the observations disagree with $H_0\,,$ then we reject the null hypothesis. On the other hand, if the sample evidence does not strongly contradict $H_0\,,$ then we continue to believe $H_0\,.$ 
+
+:::{.callout-warning}
+## No "accepting" the null
+The two possible conclusions of a hypothesis test are: **reject $H_0$** or **fail to reject $H_0\,.$**
+:::
+
+:::{.notes}
+- *Fail to reject $H_0$* is sometimes phrased *retain $H_0$* or (perhaps less accurately) *accept $H_0$*
+- Why not just *accept* the null and move on with our lives? Well, if I search the Highlands for the Scottish wildcat (critically endangered) and fail to find any, does that prove they do not exist?
+:::
+
+## Know when to fold 'em
+
+- What does evidence for a hypothesis test look like?
+
+- A test statistic $T$ is a function of the sample data (like an estimator). 
+
+- The decision to reject or fail to reject $H_0$ will involve computing the test statistic.
+
+
+## How extreme is the evidence?
+
+- A rejection region $R$ is the collection of values of the test statistic for which $H_0$ is to be rejected in favor of the alternative: 
+$$
+R = \left\{ x : T(x) > c \right\}\,,
+$$
+where $c$ is referred to as a critical value. 
+
+- For observed test statistic $t$, if $t \in R$ then we reject $H_0\,.$ The alternative is that $t \not\in R$ and in this case we fail to reject $H_0\,.$ 
+
+:::{.notes}
+- A procedure for carrying out a hypothesis test is based on specifying two additional items: 
+  -  test statistic 
+  -  corresponding rejection region.
+- If a given sample falls in the rejection region, then we reject $H_0\,.$
+- If $X \in R$ then the calculated test statistic exceeds some critical value.
+:::
+
+## Recall: critical values
+
+Critical values are quantiles of the reference distribution. 
+Critical values are NOT areas.
+
+:::: {.columns}
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+df <- 10
+L <- 30
+x1 <- qchisq(1-0.05/2, df=df, lower.tail = FALSE)
+x2 <- qchisq(0.05/2, df=df, lower.tail = FALSE)
+ggplot(NULL, aes(c(0,L))) + 
+  geom_line(stat = "function", fun = dchisq, args = list(df = df), xlim = c(0, L), linewidth = 1) +
+  geom_area(stat = "function", fun = dchisq, args = list(df = df), fill = "blue", xlim = c(0, x1), alpha = 0.3) + 
+        geom_area(stat = "function", fun = dchisq, args = list(df = df), fill = "blue", xlim = c(x2, L), alpha = 0.3) +
+        annotate("text", x = 10, y = .025, label=TeX("Each shaded area $=\\alpha$"), color = "blue", size = 8) + 
+        annotate("segment", x = 10, xend = x1-1, y = 0.015, yend = .002, color = "blue", arrow=arrow(length=unit(0.2,"cm")), size = 2) + 
+        annotate("segment", x = 10, xend = x2+1, y = 0.015, yend = .002, color = "blue", arrow=arrow(length=unit(0.2,"cm")), size = 2) + 
+        annotate("text", x = x1, y = -0.01, label=TeX("$\\chi^2_{1-\\alpha, \\nu}$"), linewidth = 2, size = 8) + 
+        annotate("text", x = x2, y = -0.01, label=TeX("$\\chi^2_{\\alpha, \\nu}$"), linewidth = 2, size = 8) + 
+        geom_segment(aes(x = x1, xend = x1, y = 0, yend = dchisq(x1, df = df)), linetype = 44) + 
+        geom_segment(aes(x = x2, xend = x2, y = 0, yend = dchisq(x2, df = df)), linetype = 44) + ylim(-0.015, 0.1) + 
+        theme(axis.title.y = element_blank(), axis.ticks.y=element_blank(), axis.text.y=element_blank(), axis.title.x = element_blank(), axis.ticks.x=element_blank(), axis.text.x=element_blank(), text = element_text(size = 20))
+```
+:::
+
+::: {.column width="40%"}
+- Using R: `q`+distname, e.g., `qnorm`, `qt`, `qchisq`, ...
+- Using table
+:::
+::::
+
+:::{.notes}
+- $\chi^2$ distribution is not symmetric! $\mathsf{N}$ and $\mathsf{t}$ are symmetric.
+- For $\alpha/2 = 0.025\,,$ $z_{\alpha/2} = 1.96\,.$
+:::
+
+## Balancing act
+
+The basis for choosing a rejection region involves balancing **Type I** and **Type II** errors. A conclusion is reached in a hypothesis test by selecting a significance level $\alpha$ for the test linked to the maximal type I error rate.
+
+-  Type I error occurs if $H_0$ is rejected when $H_0$ is actually true. 
+-  Type II error is made if we fail to reject $H_0$ when $H_0$ is actually false.
+
+:::{.notes}
+-  Fix $\alpha$ first!
+:::
+
+## How do $P$-values fit?
+
+A $P$-value is the probability, assuming $H_0$ is true, of obtaining a test statistic at least as contradictory to $H_0$ as the value calculated from the sample data.
+
+Smaller $P$-values indicate stronger evidence against $H_0\,.$ 
+
+- If $P \leq \alpha$ then we reject $H_0$ at significance level $\alpha\,.$ 
+- If $P \geq \alpha$ we fail to reject $H_0$ at significance level $\alpha\,.$ 
+
+
+## The skinny on hypothesis testing {.smaller}
+
+:::{.callout-warning}
+## Two routes to the same answer!  
+But both are really the same. 
+:::
+
+### One way: 
+
+1. Compute the value of an appropriate test statistic.
+2. Determine the $P$-value, probability calculated assuming the null is true of observing a test statistic value at least as contradictory to $H_0$ as what was obtained from data.
+3. For given $\alpha\,,$ reject $H_0$ if evidence is strong, i.e. $P < \alpha\,.$ If evidence is not strong enough, fail to reject $H_0\,.$ 
+
+## The skinny on hypothesis testing {.smaller}
+
+:::{.callout-warning}
+## Two routes to the same answer!  
+But both are really the same. 
+:::
+
+### Another way: 
+
+1. Compute the value of an appropriate test statistic.
+2. Determine the critical value for the level $\alpha$ and hence identify the rejection region for the hypothesis test.
+3. If statistic falls in rejection region, reject $H_0$ because evidence is strong. If statistic falls outwith rejection region, we fail to reject $H_0$ because evidence is not strong enough. 
+
+
+## Null distribution {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](images/htests.png){fig-alt="Pictoral representation of null distribution, with level and rejection region."}
+:::
+
+::: {.column width="40%"}
+E.g., consider hypothesis tests for a population mean. 
+
+- Distribution for $\bar{X}$
+- Under the assumption that $H_0$ is true, so curve is centered at $\mu_0$
+- Level $\alpha$ is a probability (area)
+- Critical value $c$ is a point
+- Test statistic?
+:::
+::::
+
+# Why 0.05? {.mySegue .center}
+
+## Emily Dickinson and monkeys on the stair {.smaller}
+
+![Sarah Lee, Wikimedia Commons, CC-BY-SA 4.0](images/Batu_3.jpg){fig-alt="Photo of a monkey (Sarah Lee, Wikimedia Commons, CC BY-SA 4.0.)"}
+
+
+
+## Personal significance level
+
+What is our MA22004 personal significance level?
+
+[www.openintro.org/book/stat/why05/](https://www.openintro.org/book/stat/why05/)
+
+
+# Summary
+
+Today we discussed: (point estimation), confidence intervals, and hypothesis tests. 
+
+We engaged in an activity to understand "Why 0.05?"
+
+:::{.callout-tip}
+## Today's materials 
+
+Slides posted to <https://dundeemath.github.io/MA22004-seminar03>.
+:::
