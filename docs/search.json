@@ -1,177 +1,198 @@
 [
   {
-    "objectID": "seminar03.html#attendance",
-    "href": "seminar03.html#attendance",
-    "title": "Seminar 03",
+    "objectID": "seminar04.html#attendance",
+    "href": "seminar04.html#attendance",
+    "title": "Seminar 04",
     "section": "Attendance",
     "text": "Attendance"
   },
   {
-    "objectID": "seminar03.html#reminders",
-    "href": "seminar03.html#reminders",
-    "title": "Seminar 03",
+    "objectID": "seminar04.html#reminders",
+    "href": "seminar04.html#reminders",
+    "title": "Seminar 04",
     "section": "Reminders",
-    "text": "Reminders\n\nDiscuss labs, R, and RStudio at Thu workshop.\nDiscuss worksheet 2 at Fri workshop.\nLab 1 due Fri 2024-10-04 at 17:00."
+    "text": "Reminders\n\nDiscuss labs, R, and RStudio at Thu workshop.\nDiscuss worksheet 3 at Fri workshop.\nLab 2 due Fri 2024-10-11 at 17:00."
   },
   {
-    "objectID": "seminar03.html#outline-of-today",
-    "href": "seminar03.html#outline-of-today",
-    "title": "Seminar 03",
+    "objectID": "seminar04.html#outline-of-today",
+    "href": "seminar04.html#outline-of-today",
+    "title": "Seminar 04",
     "section": "Outline of today   ",
-    "text": "Outline of today   \n\nOverview of tools for drawing conclusions about the characteristics of a population from data:\n\npoint estimates\nconfidence intervals\nhypothesis tests\n\nWhy 0.05?   \n\n\nOver next two seminars we will consider these concepts in general (to familiarize with language, notation, etc).\nThen we will focus on inferences in specific contexts."
+    "text": "Outline of today   \n\nInference for means\nInference for proportions\nHow much water?"
   },
   {
-    "objectID": "seminar03.html#recall",
-    "href": "seminar03.html#recall",
-    "title": "Seminar 03",
-    "section": "Recall",
-    "text": "Recall"
+    "objectID": "seminar04.html#point-estimate-for-mean",
+    "href": "seminar04.html#point-estimate-for-mean",
+    "title": "Seminar 04",
+    "section": "Point estimate for mean",
+    "text": "Point estimate for mean\nConsider data x_1, \\dots, x_m.\n(Assuming it exists)\nA point estimate for the population mean, \\mu, is:\n\\hat{\\mu} = \\frac{1}{m} \\sum_{i=1}^{m} x_i \\,."
   },
   {
-    "objectID": "seminar03.html#what-is-a-statistic",
-    "href": "seminar03.html#what-is-a-statistic",
-    "title": "Seminar 03",
-    "section": "What is a statistic?",
-    "text": "What is a statistic?\nA statistic is a quantity that can be calculated from sample data.\nPrior to obtaining data, a statistic is an unknown quantity and is therefore a random variable (rv).\n\n\nLet’s look at some examples."
+    "objectID": "seminar04.html#consider-the-population",
+    "href": "seminar04.html#consider-the-population",
+    "title": "Seminar 04",
+    "section": "Consider the population",
+    "text": "Consider the population\nWe consider inferences for the population mean assuming that samples are drawn for one of three different populations.\n\nNormal population with known \\sigma\nAny population with unknown \\sigma, when m large\nNormal population with unknown \\sigma, m may be small\n\n\n\n\n\n\n\nWhat …\n\n\n… changes?\n… stays the same?"
   },
   {
-    "objectID": "seminar03.html#examples-of-statistics",
-    "href": "seminar03.html#examples-of-statistics",
-    "title": "Seminar 03",
-    "section": "Examples of statistics",
-    "text": "Examples of statistics\nViewed as estimators for characteristics of the population.\n\nsample mean, \\overline{X} = \\frac{1}{m} \\sum_{i=1}^m X_i\nsample variance, S^2 = \\frac{1}{m-1} \\sum_{i=1}^m (X_i - \\overline{X})^2\navg of extreme lengths, \\widetilde{X} = \\frac{\\min_{i\\geq 0}(X_i) + \\max_{i\\geq 0}(X_i)}{2}\n\n\n\n\n\n\n\nRandom variables have distributions\n\n\nAny function of rvs X_i is also a rv and, therefore, has a probability distribution."
+    "objectID": "seminar04.html#confidence-intervals-for-mean",
+    "href": "seminar04.html#confidence-intervals-for-mean",
+    "title": "Seminar 04",
+    "section": "Confidence intervals for mean",
+    "text": "Confidence intervals for mean\nThe basic form is awlays:\n\\text{pt est} \\pm \\underbrace{(\\text{critical value}) \\cdot (\\text{precision of pt est})}_\\text{margin of error}\n\n\n\n\n\n\nWhat changes?\n\n\nMargin of error!"
   },
   {
-    "objectID": "seminar03.html#sampling-distributions",
-    "href": "seminar03.html#sampling-distributions",
-    "title": "Seminar 03",
-    "section": "Sampling distributions",
-    "text": "Sampling distributions\nWe refer to the probability distribution for a statistic as a sampling distribution to emphasize how the distribution will vary across all possible sample data."
+    "objectID": "seminar04.html#hypothesis-tests-for-means",
+    "href": "seminar04.html#hypothesis-tests-for-means",
+    "title": "Seminar 04",
+    "section": "Hypothesis tests for means",
+    "text": "Hypothesis tests for means\nTests on equality of mean \\mu, i.e., H_0 : \\mu = \\mu_0 against one of the alternatives:\n\nH_a : \\mu \\neq \\mu_0\nH_a : \\mu &gt; \\mu_0\nH_a : \\mu &lt; \\mu_0\n\n\n\n\n\n\n\nWhat changes?\n\n\nTest statistic!\n\n\n\n\n\nDoes the available data provides sufficient evidence to reject a null hypothesis H_0 which is assumed to be true?\nNote the equality is part of the null hypothesis.\nIf the observations disagree with H_0, then we reject the null hypothesis.\nIf the sample evidence does not strongly contradict H_0, then we continue to believe H_0.\n\\mu_0 is the null value that separate the null and alternative"
   },
   {
-    "objectID": "seminar03.html#a-point-estimator",
-    "href": "seminar03.html#a-point-estimator",
-    "title": "Seminar 03",
-    "section": "A point estimator",
-    "text": "A point estimator\nConsider iid X_1, X_2, \\dots, X_m \\sim F(\\theta)\\,.\nA point estimator \\widehat{\\theta}_m of \\theta is obtained by selecting a suitable statistic g\\,, \n  \\widehat{\\theta}_m = g(X_1, \\dots, X_m) \\,.\n\n\n\nConsider rvs X_i \\sim F(\\theta) (general distribution)\nRecall \\theta a fixed, unknown quantity\nNOTE X_i ARE RVS! not observations (data points)"
+    "objectID": "seminar04.html#forms-for-1001-alpha-cis",
+    "href": "seminar04.html#forms-for-1001-alpha-cis",
+    "title": "Seminar 04",
+    "section": "Forms for 100(1-\\alpha)\\% CIs",
+    "text": "Forms for 100(1-\\alpha)\\% CIs\n\nNormal population with known \\sigma: \\overline{x} \\pm z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{m}}\nAny population with unknown \\sigma, when m large \\overline{x} \\pm z_{\\alpha/2} \\frac{s}{\\sqrt{m}}\nNormal population with unknown \\sigma, m may be small \\overline{x} \\pm t_{\\alpha/2, m-1} \\frac{s}{\\sqrt{m}}"
   },
   {
-    "objectID": "seminar03.html#closing-the-deal-point-estimate",
-    "href": "seminar03.html#closing-the-deal-point-estimate",
-    "title": "Seminar 03",
-    "section": "Closing the deal: point estimate",
-    "text": "Closing the deal: point estimate\nA point estimate of a parameter \\theta is a single number that we regard as a sensible value for \\theta\\,.\nA point estimate \\widehat{\\theta}_m is computed from an estimator using sample data.\n\n\n\n\n\n\nOverloaded notation\n\n\nThe symbol \\widehat{\\theta}_m is typically used to denote both the estimator and the point estimate resulting from a given sample.\n\n\n\n\n\nLikewise, we refer to statistics: used for both the estimator and the estimate.\nWriting \\widehat{\\theta} = 42 does not indicate how the point estimate was obtained; therefore, it is essential to report both the estimator and the resulting point estimate.\nIn addition, we should also report a measure of precision in our estimate."
+    "objectID": "seminar04.html#hypothesis-test-statistics",
+    "href": "seminar04.html#hypothesis-test-statistics",
+    "title": "Seminar 04",
+    "section": "Hypothesis test statistics",
+    "text": "Hypothesis test statistics\n\nNormal population with known \\sigma: Z = \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{m}} \\sim \\mathsf{N}(0,1)\nAny population with unknown \\sigma, when m large Z = \\frac{\\overline{X} - \\mu_0}{S / \\sqrt{m}} \\sim \\mathsf{N}(0,1)\nNormal population with unknown \\sigma, m may be small T = \\frac{\\overline{X} - \\mu_0}{S / \\sqrt{m}} \\sim \\mathsf{t}(m-1)\n\n\n\nOnce we have sample data we make point estimate!"
   },
   {
-    "objectID": "seminar03.html#uncertainty-in-a-point-estimate",
-    "href": "seminar03.html#uncertainty-in-a-point-estimate",
-    "title": "Seminar 03",
-    "section": "Uncertainty in a point estimate",
-    "text": "Uncertainty in a point estimate\n\nThe standard error is one measure of the precision of an estimate.\nThe standard error of an estimator \\widehat{\\theta} is the standard deviation: \n\\sigma_{\\widehat{\\theta}} = \\sqrt{\\mathop{\\mathrm{Var}}(\\widehat{\\theta})}\\,.\n\nEstimated standard error is denoted by \\widehat{\\sigma}_{\\widehat{\\theta}} or simply s_{\\widehat{\\theta}}\\,.\n\n\n\nOften, the standard error depends on unknown parameters and must also be estimated.\nStandard error is sometimes denoted \\mathsf{se} = \\mathsf{se}(\\widehat{\\theta}) and the estimated standard error by \\widehat{\\mathsf{se}}\\,."
+    "objectID": "seminar04.html#example-2n",
+    "href": "seminar04.html#example-2n",
+    "title": "Seminar 04",
+    "section": "Example (2/n)",
+    "text": "Example (2/n)\nLet \\mu denote the true average weight gain of women over the course of their first year at university. The foregoing quote suggests that we should test the hypotheses H_0: \\mu = 15 versus H_a : \\mu \\neq 15.\nSuppose that a random sample of m such individuals is selected and the weight gain of each one is determined, resulting in a sample mean weight gain \\overline{x} and a sample standard deviation s.\n\n\nBefore data is obtained, the sample mean weight gain is a random variable X and the sample standard deviation is also a random variable S!"
   },
   {
-    "objectID": "seminar03.html#a-confidence-interval",
-    "href": "seminar03.html#a-confidence-interval",
-    "title": "Seminar 03",
-    "section": "A confidence interval",
-    "text": "A confidence interval\n\nAn interval estimate reports an entire range of plausible values for the parameter of interest.\nA confidence interval (CI) is an interval estimate that makes a probability statement about the degree of reliability, or the confidence level, of the interval.\n\n\n\nAlternative to reporting a point estimate for a parameter!"
+    "objectID": "seminar04.html#example-3n",
+    "href": "seminar04.html#example-3n",
+    "title": "Seminar 04",
+    "section": "Example (3/n)",
+    "text": "Example (3/n)\n\n\nZ = \\frac{\\overline{X} - \\mu}{\\sigma/ \\sqrt{m}}\nAssuming H_0 is true: Z = \\frac{\\overline{X} - 15}{\\sigma/ \\sqrt{m}}\nBut don’t know \\sigma: Z = \\frac{\\overline{X} - 15}{S/ \\sqrt{m}} \\sim \\mathsf{N}(0,1)"
   },
   {
-    "objectID": "seminar03.html#ci-definition",
-    "href": "seminar03.html#ci-definition",
-    "title": "Seminar 03",
-    "section": "CI definition",
-    "text": "CI definition\nA 100(1-\\alpha)\\% confidence interval for a parameter \\theta is a random interval, C_m = (L_m , U_m)\\,, where L_m = \\ell(X_1, \\dots, X_m) and U_m = u(X_1, \\dots, X_m) are functions of the data, such that, \n  P_{\\theta}(L_m &lt; \\theta &lt; U_m ) = 1 - \\alpha\\,,\n for all \\theta \\in \\Theta (the parameter space).\n\n\nThe CI represents values for the population parameter for which the difference between the parameter and the observed estimate is not statistically significant at the \\alpha level.\nIf the true value of the parameter lies outside the 100(1-\\alpha)\\% confidence interval, then a sampling event has occurred (namely, obtaining a point estimate of the parameter at least this far from the true parameter value) which had a probability of 100\\alpha\\% (or less) of happening by chance.\nNot a probability statement about the parameter \\theta\\,.\nNote that \\theta is fixed (\\theta is not a rv) and the interval C_m is random.\nAfter data has been collected and a point estimator has been calculated, the resulting CIs either contain the true parameter value or they do not."
+    "objectID": "seminar04.html#example-4n",
+    "href": "seminar04.html#example-4n",
+    "title": "Seminar 04",
+    "section": "Example (4/n)",
+    "text": "Example (4/n)\nSuppose \\overline{x} = 13.7 and plugging in values for s and \\sqrt{n} yields z = -2.8.\nWhich values of the test statistic are at least as contradictory to H_0 as -2.80 itself?\n\n\nE.g., m = 40 and s = 2.936401\nPossible values: 13.5, 13.0, any value smaller than 13.7 is more contradictory to H_0 than 13.7\n16.3 is just as contradictory to H_0 as is 13.7; both fall the same distance from the null value 15\nJust as values of \\overline{x} that are at most 13.7 correspond to z\\leq -2.8, values of \\overline{x} that are at least 16.3 correspond to z \\geq 2"
   },
   {
-    "objectID": "seminar03.html#what-a-ci-is-not",
-    "href": "seminar03.html#what-a-ci-is-not",
-    "title": "Seminar 03",
-    "section": "What a CI is not…",
-    "text": "What a CI is not…\n\nA 95\\% confidence level does not mean there is a 95\\% probability that the population parameter lies within a given interval.\nA 95\\% confidence level does not mean that 95\\% of the sample data lie within the confidence interval.\nA particular confidence level of 95\\% calculated from an experiment does not mean that there is a 95\\% probability of a sample parameter from a repeat of the experiment falling within this interval.\n\n\n\nNothing special about the number 95 here.\nFor 1st: i.e., a 95% probability that the interval covers the population parameter.\nOnce an interval is calculated, this interval either covers the parameter value or it does not!"
+    "objectID": "seminar04.html#example-5n",
+    "href": "seminar04.html#example-5n",
+    "title": "Seminar 04",
+    "section": "Example (5/n)",
+    "text": "Example (5/n)\nP( Z \\leq -2.80 \\quad \\text{or}\\quad  Z \\geq 2.80 \\quad \\text{assuming } H_0 \\text{ true})\n\n\\approx 2 \\cdot (area under the z curve ot the right of 2.80) $= 2[1 - (2.80)] = 2[1 - 0.9974] = 0.0052\n\nIf the null hypothesis is in fact true, only about one half of one percent of all samples would result in a test statistic value at least as contradictory to the null hypothesis as is our value. Clearly -2.80 is among the possible test statistic values that are most contradictory to H_0.\nThe evidence suggest to reject H_0."
   },
   {
-    "objectID": "seminar03.html#two-hypotheses",
-    "href": "seminar03.html#two-hypotheses",
-    "title": "Seminar 03",
-    "section": "Two hypotheses",
-    "text": "Two hypotheses\nMethods for determining which of two contradictory claims, or hypotheses, about a parameter is correct.\n\nH_0 the null hypothesis is a claim that we initially assume to be true by default.\nH_a the alternative hypothesis is an assertion that is contradictory to H_0\\,.\n\n\n\nTypically, we shall consider hypothesis concerning a parameter \\theta \\in \\Theta taking values in a parameter space.\nThe statistical hypothesis are contradictory in that H_0 and H_a divide \\Theta into two disjoint sets."
+    "objectID": "seminar04.html#example-6n",
+    "href": "seminar04.html#example-6n",
+    "title": "Seminar 04",
+    "section": "Example (6/n)",
+    "text": "Example (6/n)\nThe article Freshman 15: Fact or Fiction (Obesity, 2006: 1438– 1443), for m = 137 students, the \\overline{x} = 2.42 lb with s =  5.72 lb.\nThis gives z = (2.42 - 15)/(5.72 /\\sqrt{137}) = -25.7\\,.\nThe probability of observing a value at least this extreme in either direction is essentially zero!\nThe data very strongly contradicts the null hypothesis, and there is substantial evidence that true average weight gain is much closer to 0 than to 15.\n\n\nNote this implies some students lost weight!"
   },
   {
-    "objectID": "seminar03.html#hypothesis-testing",
-    "href": "seminar03.html#hypothesis-testing",
-    "title": "Seminar 03",
-    "section": "Hypothesis testing",
-    "text": "Hypothesis testing\n\nA hypothesis test is a statistical procedure.\nThe test procedure is based on the initial assumption that H_0 is true and asks if the available data provides sufficient evidence to reject H_0\\,.\nIf the observations disagree with H_0\\,, then we reject the null hypothesis. On the other hand, if the sample evidence does not strongly contradict H_0\\,, then we continue to believe H_0\\,.\n\n\n\n\n\n\n\nNo “accepting” the null\n\n\nThe two possible conclusions of a hypothesis test are: reject H_0 or fail to reject H_0\\,.\n\n\n\n\n\nFail to reject H_0 is sometimes phrased retain H_0 or (perhaps less accurately) accept H_0\nWhy not just accept the null and move on with our lives? Well, if I search the Highlands for the Scottish wildcat (critically endangered) and fail to find any, does that prove they do not exist?"
+    "objectID": "seminar04.html#derivation-point-estimate-for-p",
+    "href": "seminar04.html#derivation-point-estimate-for-p",
+    "title": "Seminar 04",
+    "section": "(Derivation) point estimate for p",
+    "text": "(Derivation) point estimate for p\nLet X be the count of members with a given property based on a sample of size m from a population where a proportion p share the property.\nThen \\widehat{p} = X / m is an estimator of p.\nAssume m p_0 \\geq 10 and m (1-p_0) \\geq 10.\nFor example\np\\in (0,1) and consider iid Bernoulli trials X_1, \\dots, X_m \\sim \\mathsf{Bernoulli}(p).\n\\widehat{p} = \\frac{1}{m} \\sum_{i=1}^m X_i\\,, \\qquad  \\mu_{\\widehat{p}} = \\mathop{\\mathrm{\\mathbf{E}}}X_i = p\\,, \\qquad \\sigma_{\\widehat{p}} = \\sqrt{\\frac{\\mathop{\\mathrm{Var}}{X_i}}{m}} = \\sqrt{\\frac{p(1-p)}{m}}"
   },
   {
-    "objectID": "seminar03.html#know-when-to-fold-em",
-    "href": "seminar03.html#know-when-to-fold-em",
-    "title": "Seminar 03",
-    "section": "Know when to fold ’em",
-    "text": "Know when to fold ’em\n\nWhat does evidence for a hypothesis test look like?\nA test statistic T is a function of the sample data (like an estimator).\nThe decision to reject or fail to reject H_0 will involve computing the test statistic."
+    "objectID": "seminar04.html#alpha-ci-for-p",
+    "href": "seminar04.html#alpha-ci-for-p",
+    "title": "Seminar 04",
+    "section": "100(1-\\alpha)\\% CI for p",
+    "text": "100(1-\\alpha)\\% CI for p\n\\widehat{p} \\pm z_{\\alpha/2} \\sqrt{\\frac{\\widehat{p}(1-\\widehat{p})}{m}}\n\n\n\n\n\n\nCompare to CI for population mean…\n\n\nHow is the standard error different from the standard error for estimate of mean?"
   },
   {
-    "objectID": "seminar03.html#how-extreme-is-the-evidence",
-    "href": "seminar03.html#how-extreme-is-the-evidence",
-    "title": "Seminar 03",
-    "section": "How extreme is the evidence?",
-    "text": "How extreme is the evidence?\n\nA rejection region R is the collection of values of the test statistic for which H_0 is to be rejected in favor of the alternative: \nR = \\left\\{ x : T(x) &gt; c \\right\\}\\,,\n where c is referred to as a critical value.\nFor observed test statistic t, if t \\in R then we reject H_0\\,. The alternative is that t \\not\\in R and in this case we fail to reject H_0\\,.\n\n\n\nA procedure for carrying out a hypothesis test is based on specifying two additional items:\n\ntest statistic\ncorresponding rejection region.\n\nIf a given sample falls in the rejection region, then we reject H_0\\,.\nIf X \\in R then the calculated test statistic exceeds some critical value."
+    "objectID": "seminar04.html#hypothesis-test-for-p-at-level-alpha",
+    "href": "seminar04.html#hypothesis-test-for-p-at-level-alpha",
+    "title": "Seminar 04",
+    "section": "Hypothesis test for p at level \\alpha",
+    "text": "Hypothesis test for p at level \\alpha\nConsider H_0 : p = p_0. The test statistic is \nZ = \\frac{\\widehat{p} - p_0}{\\sqrt{p_0 (1-p_0) / m}} \\,.\n\nFor a hypothesis test at level \\alpha, we use the following procedure:\n\nIf H_a : p &gt; p_0, then P-value is the area under \\mathsf{N}(0,1) to the right of z.\nIf H_a : p &lt; p_0, then P-value is the area under \\mathsf{N}(0,1) to the left of z.\nIf H_a : p \\neq p_0, then P-value is twice the area under \\mathsf{N}(0,1) to the right of |z|."
   },
   {
-    "objectID": "seminar03.html#recall-critical-values",
-    "href": "seminar03.html#recall-critical-values",
-    "title": "Seminar 03",
-    "section": "Recall: critical values",
-    "text": "Recall: critical values\nCritical values are quantiles of the reference distribution. Critical values are NOT areas.\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing R: q+distname, e.g., qnorm, qt, qchisq, …\nUsing table\n\n\n\n\n\n\\chi^2 distribution is not symmetric! \\mathsf{N} and \\mathsf{t} are symmetric.\nFor \\alpha/2 = 0.025\\,, z_{\\alpha/2} = 1.96\\,."
+    "objectID": "seminar04.html#the-question",
+    "href": "seminar04.html#the-question",
+    "title": "Seminar 04",
+    "section": "The question",
+    "text": "The question\nHow might you estimate the proportion of the earth covered by water?"
   },
   {
-    "objectID": "seminar03.html#balancing-act",
-    "href": "seminar03.html#balancing-act",
-    "title": "Seminar 03",
-    "section": "Balancing act",
-    "text": "Balancing act\nThe basis for choosing a rejection region involves balancing Type I and Type II errors. A conclusion is reached in a hypothesis test by selecting a significance level \\alpha for the test linked to the maximal type I error rate.\n\nType I error occurs if H_0 is rejected when H_0 is actually true.\nType II error is made if we fail to reject H_0 when H_0 is actually false.\n\n\n\nFix \\alpha first!"
+    "objectID": "seminar04.html#sampling",
+    "href": "seminar04.html#sampling",
+    "title": "Seminar 04",
+    "section": "Sampling",
+    "text": "Sampling\nIf we were to take a random sample of points on the globe, then the proportion that touched water would be a reasonable estimate of the overall proportion of water covering the earth.\n\n\n\n\n\n\nRemember the candy!\n\n\nAre random samples always representative? How can we take a random representative sample from globe (sphere)?"
   },
   {
-    "objectID": "seminar03.html#how-do-p-values-fit",
-    "href": "seminar03.html#how-do-p-values-fit",
-    "title": "Seminar 03",
-    "section": "How do P-values fit?",
-    "text": "How do P-values fit?\nA P-value is the probability, assuming H_0 is true, of obtaining a test statistic at least as contradictory to H_0 as the value calculated from the sample data.\nSmaller P-values indicate stronger evidence against H_0\\,.\n\nIf P \\leq \\alpha then we reject H_0 at significance level \\alpha\\,.\nIf P \\geq \\alpha we fail to reject H_0 at significance level \\alpha\\,."
+    "objectID": "seminar04.html#the-task",
+    "href": "seminar04.html#the-task",
+    "title": "Seminar 04",
+    "section": " The task",
+    "text": "The task\n\n\n\nThe globe will be tossed around.\nHit the globe with the tip of your index finger.\nShout:\n\n“water!” if your finger touches water, or\n“land!” if your finger touches land.\n\nWe will record your observation.\n\n\n\nDo not flinch ;)"
   },
   {
-    "objectID": "seminar03.html#the-skinny-on-hypothesis-testing",
-    "href": "seminar03.html#the-skinny-on-hypothesis-testing",
-    "title": "Seminar 03",
-    "section": "The skinny on hypothesis testing",
-    "text": "The skinny on hypothesis testing\n\n\n\n\n\n\nTwo routes to the same answer!\n\n\nBut both are really the same.\n\n\n\nOne way:\n\nCompute the value of an appropriate test statistic.\nDetermine the P-value, probability calculated assuming the null is true of observing a test statistic value at least as contradictory to H_0 as what was obtained from data.\nFor given \\alpha\\,, reject H_0 if evidence is strong, i.e. P &lt; \\alpha\\,. If evidence is not strong enough, fail to reject H_0\\,."
+    "objectID": "seminar04.html#the-result",
+    "href": "seminar04.html#the-result",
+    "title": "Seminar 04",
+    "section": "The result",
+    "text": "The result\nLet p be the proportion of earth’s surface covered with water.\n\nPoint estimate \\hat{p}\nConfidence interval for p\nHypothesis test: p is 0.7?"
   },
   {
-    "objectID": "seminar03.html#the-skinny-on-hypothesis-testing-1",
-    "href": "seminar03.html#the-skinny-on-hypothesis-testing-1",
-    "title": "Seminar 03",
-    "section": "The skinny on hypothesis testing",
-    "text": "The skinny on hypothesis testing\n\n\n\n\n\n\nTwo routes to the same answer!\n\n\nBut both are really the same.\n\n\n\nAnother way:\n\nCompute the value of an appropriate test statistic.\nDetermine the critical value for the level \\alpha and hence identify the rejection region for the hypothesis test.\nIf statistic falls in rejection region, reject H_0 because evidence is strong. If statistic falls outwith rejection region, we fail to reject H_0 because evidence is not strong enough."
+    "objectID": "seminar04.html#challenge",
+    "href": "seminar04.html#challenge",
+    "title": "Seminar 04",
+    "section": "Challenge:",
+    "text": "Challenge:\nHow could one use random numbers from the computer to pick a random spot on the globe?\nAny point is characterized by a latitude (which must be between 90◦ North and 90◦ South) and a longitude (between 180◦ West and 180◦ East).\n\nCan you pick a random spot on the globe by picking a latitude between −90 to 90 at random, and a longitude between −180 and 180 at random?"
   },
   {
-    "objectID": "seminar03.html#null-distribution",
-    "href": "seminar03.html#null-distribution",
-    "title": "Seminar 03",
-    "section": "Null distribution",
-    "text": "Null distribution\n\n\n\n\nE.g., consider hypothesis tests for a population mean.\n\nDistribution for \\bar{X}\nUnder the assumption that H_0 is true, so curve is centered at \\mu_0\nLevel \\alpha is a probability (area)\nCritical value c is a point\nTest statistic?"
+    "objectID": "seminar04.html#example-churchill-1n",
+    "href": "seminar04.html#example-churchill-1n",
+    "title": "Seminar 04",
+    "section": "Example: Churchill 1/n",
+    "text": "Example: Churchill 1/n\nChurchill claims that he will receive half the votes for the House of Commons seat for the constituency of Dundee.\nWe are skeptical that he is as popular as he says. Suppose 116 out of 263 Dundonians polled claimed that they intended to vote for Churchill.\nCan it be concluded at significance level 0.10 that more than half of all eligible Dundonains will vote for Churchill?"
   },
   {
-    "objectID": "seminar03.html#emily-dickinson-and-monkeys-on-the-stair",
-    "href": "seminar03.html#emily-dickinson-and-monkeys-on-the-stair",
-    "title": "Seminar 03",
-    "section": "Emily Dickinson and monkeys on the stair",
-    "text": "Emily Dickinson and monkeys on the stair\n\nSarah Lee, Wikimedia Commons, CC-BY-SA 4.0"
+    "objectID": "seminar04.html#example-churhill-2n",
+    "href": "seminar04.html#example-churhill-2n",
+    "title": "Seminar 04",
+    "section": "Example: Churhill 2/n",
+    "text": "Example: Churhill 2/n\n\nWhat is the parameter of interest? What are the null and alternative hypotheses?"
   },
   {
-    "objectID": "seminar03.html#personal-significance-level",
-    "href": "seminar03.html#personal-significance-level",
-    "title": "Seminar 03",
-    "section": "Personal significance level",
-    "text": "Personal significance level\nWhat is our MA22004 personal significance level?\nwww.openintro.org/book/stat/why05/"
+    "objectID": "seminar04.html#example-churhill-3n",
+    "href": "seminar04.html#example-churhill-3n",
+    "title": "Seminar 04",
+    "section": "Example: Churhill 3/n",
+    "text": "Example: Churhill 3/n\nThe parameter of interest is p, the proportion of votes for Churchill.\nThe null hypothesis is H_0 : p = 0.5.\nThe alternative hypothesis is H_a : p &lt; 0.5.\n\nSince 263(0.5) = 131.5 &gt; 10, we satisfy the assumptions to carry out the hypothesis test using the statistic described earlier."
+  },
+  {
+    "objectID": "seminar04.html#example-churhill-4n",
+    "href": "seminar04.html#example-churhill-4n",
+    "title": "Seminar 04",
+    "section": "Example: Churhill 4/n",
+    "text": "Example: Churhill 4/n\nBased on the sample, \\widehat{p} = 116 / 263 = 0.4411.\nThe test statistic value is \n\\begin{aligned}\nz &= \\frac{\\widehat{p} - p_0}{\\sqrt{p_0 (1-p_0) / m}} \\\\\n&= \\frac{0.4411 - 0.5}{\\sqrt{0.5 (1-0.5) / 263}}\\\\\n&= −1.91 \\,.\n\\end{aligned}\n\nThe P-value for this lower-tailed z test is P = \\Phi(−1.91) = 0.028."
+  },
+  {
+    "objectID": "seminar04.html#example-churhill-5n",
+    "href": "seminar04.html#example-churhill-5n",
+    "title": "Seminar 04",
+    "section": "Example: Churhill 5/n",
+    "text": "Example: Churhill 5/n\nSince P &lt; 0.10 = \\alpha, we reject the null hypothesis at the 0.05 level.\n\nWhat does this mean in words? Always place the result of the hypothesis test in the context of the problem!"
+  },
+  {
+    "objectID": "seminar04.html#example-churhill-6n-conclusion",
+    "href": "seminar04.html#example-churhill-6n-conclusion",
+    "title": "Seminar 04",
+    "section": "Example: Churhill 6/n (conclusion)",
+    "text": "Example: Churhill 6/n (conclusion)\nThe evidence for concluding that the true proportion is different from p_0 = 0.5 at the 0.10 level is compelling."
   }
 ]

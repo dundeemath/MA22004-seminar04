@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.554">
 
   <meta name="author" content="Dr Eric Hall • ehall001@dundee.ac.uk">
-  <meta name="dcterms.date" content="2024-10-02">
-  <title>Seminar 03</title>
+  <meta name="dcterms.date" content="2024-10-09">
+  <title>Seminar 04</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -348,11 +348,11 @@
 <section id="title-slide" class="title-page center">
   <img class="logo" src="resources/rev_logo.png" alt="University of Dundee Logo">
   <br>
-  <h1 class="title">Seminar 03</h1>
+  <h1 class="title">Seminar 04</h1>
   <p class="subtitle">MA22004</p>
   <br>
   <p class="author">Dr Eric Hall • ehall001@dundee.ac.uk</p>
-  <p class="date">2024-10-02</p>
+  <p class="date">2024-10-09</p>
 </section>
 <section>
 <section id="announcements" class="title-slide slide level1 mySegue center">
@@ -384,66 +384,78 @@
 <h2>Reminders</h2>
 <ul>
 <li>Discuss labs, R, and RStudio at Thu workshop.</li>
-<li>Discuss worksheet 2 at Fri workshop.</li>
-<li>Lab 1 due <strong>Fri 2024-10-04</strong> at <strong>17:00</strong>.</li>
+<li>Discuss worksheet 3 at Fri workshop.</li>
+<li>Lab 2 due <strong>Fri 2024-10-11</strong> at <strong>17:00</strong>.</li>
 </ul>
 </section>
 <section id="outline-of-today" class="slide level2">
 <h2>Outline of today &nbsp;&nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg></h2>
 <ol type="1">
-<li>Overview of tools for drawing conclusions about the characteristics of a population from data:
-<ul>
-<li>point estimates</li>
-<li>confidence intervals</li>
-<li>hypothesis tests</li>
-</ul></li>
-<li>Why 0.05? &nbsp;&nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg></li>
+<li><p>Inference for means</p></li>
+<li><p>Inference for proportions</p></li>
+<li><p>How much water? &nbsp;&nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg></p></li>
 </ol>
-<aside class="notes">
-<p>Over next two seminars we will consider these concepts in general (to familiarize with language, notation, etc).</p>
-<p>Then we will focus on inferences in specific contexts.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section></section>
+<section>
+<section id="inference-for-means" class="title-slide slide level1 mySegue center">
+<h1>Inference for means</h1>
+
 </section>
-<section id="recall" class="slide level2 mySegue center">
-<h2>Recall</h2>
+<section id="point-estimate-for-mean" class="slide level2">
+<h2>Point estimate for mean</h2>
+<p>Consider data <span class="math inline">x_1, \dots, x_m</span>.</p>
+<p>(Assuming it exists)</p>
+<p>A point estimate for the population mean, <span class="math inline">\mu</span>, is:</p>
+<p><span class="math display">\hat{\mu} = \frac{1}{m} \sum_{i=1}^{m} x_i \,.</span></p>
 </section>
-<section id="what-is-a-statistic" class="slide level2">
-<h2>What is a statistic?</h2>
-<p>A statistic is a quantity that can be calculated from sample data.</p>
-<p>Prior to obtaining data, a statistic is an unknown quantity and is therefore a random variable (rv).</p>
-<aside class="notes">
+<section id="consider-the-population" class="slide level2 smaller">
+<h2>Consider the <em>population</em></h2>
+<p>We consider inferences for the population mean assuming that samples are drawn for one of three different populations.</p>
+<ol type="1">
+<li>Normal population with known <span class="math inline">\sigma</span></li>
+<li>Any population with unknown <span class="math inline">\sigma</span>, when <span class="math inline">m</span> large</li>
+<li>Normal population with unknown <span class="math inline">\sigma</span>, <span class="math inline">m</span> may be small</li>
+</ol>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What …</strong></p>
+</div>
+<div class="callout-content">
+<p>… changes?</p>
+<p>… stays the same?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="confidence-intervals-for-mean" class="slide level2">
+<h2>Confidence intervals for mean</h2>
+<p>The basic form is awlays:</p>
+<p><span class="math display">\text{pt est} \pm \underbrace{(\text{critical value}) \cdot (\text{precision of pt est})}_\text{margin of error}</span></p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What changes?</strong></p>
+</div>
+<div class="callout-content">
+<p>Margin of error!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="hypothesis-tests-for-means" class="slide level2">
+<h2>Hypothesis tests for means</h2>
+<p>Tests on equality of mean <span class="math inline">\mu</span>, i.e., <span class="math inline">H_0 : \mu = \mu_0</span> against one of the alternatives:</p>
 <ul>
-<li>Let’s look at some examples.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="examples-of-statistics" class="slide level2">
-<h2>Examples of statistics</h2>
-<p>Viewed as <em>estimators</em> for characteristics of the population.</p>
-<ul>
-<li>sample mean, <span class="math inline">\overline{X} = \frac{1}{m} \sum_{i=1}^m X_i</span></li>
-<li>sample variance, <span class="math inline">S^2 = \frac{1}{m-1} \sum_{i=1}^m (X_i - \overline{X})^2</span></li>
-<li>avg of extreme lengths, <span class="math inline">\widetilde{X} = \frac{\min_{i\geq 0}(X_i) + \max_{i\geq 0}(X_i)}{2}</span></li>
+<li><span class="math inline">H_a : \mu \neq \mu_0</span></li>
+<li><span class="math inline">H_a : \mu &gt; \mu_0</span></li>
+<li><span class="math inline">H_a : \mu &lt; \mu_0</span></li>
 </ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -451,438 +463,336 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Random variables have distributions</strong></p>
+<p><strong>What changes?</strong></p>
 </div>
 <div class="callout-content">
-<p>Any function of rvs <span class="math inline">X_i</span> is also a rv and, therefore, has a probability distribution.</p>
+<p>Test statistic!</p>
 </div>
 </div>
 </div>
+<aside class="notes">
+<ul>
+<li>Does the available data provides sufficient evidence to reject a null hypothesis <span class="math inline">H_0</span> which is assumed to be true?</li>
+<li>Note the equality is part of the null hypothesis.</li>
+<li>If the observations disagree with <span class="math inline">H_0</span>, then we reject the null hypothesis.</li>
+<li>If the sample evidence does not strongly contradict <span class="math inline">H_0</span>, then we continue to believe <span class="math inline">H_0</span>.</li>
+<li><span class="math inline">\mu_0</span> is the <strong>null value</strong> that separate the null and alternative</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="sampling-distributions" class="slide level2">
-<h2>Sampling distributions</h2>
-<p>We refer to the probability distribution for a statistic as a sampling distribution to emphasize how the distribution will vary across all possible sample data.</p>
+<section id="forms-for-1001-alpha-cis" class="slide level2 smaller">
+<h2>Forms for <span class="math inline">100(1-\alpha)\%</span> CIs</h2>
+<ol type="1">
+<li>Normal population with known <span class="math inline">\sigma</span>: <span class="math display">\overline{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{m}}</span></li>
+<li>Any population with unknown <span class="math inline">\sigma</span>, when <span class="math inline">m</span> large <span class="math display">\overline{x} \pm z_{\alpha/2} \frac{s}{\sqrt{m}}</span></li>
+<li>Normal population with unknown <span class="math inline">\sigma</span>, <span class="math inline">m</span> may be small <span class="math display">\overline{x} \pm t_{\alpha/2, m-1} \frac{s}{\sqrt{m}}</span></li>
+</ol>
+</section>
+<section id="hypothesis-test-statistics" class="slide level2 smaller">
+<h2>Hypothesis test statistics</h2>
+<ol type="1">
+<li>Normal population with known <span class="math inline">\sigma</span>: <span class="math display">Z = \frac{\overline{X} - \mu_0}{\sigma / \sqrt{m}} \sim \mathsf{N}(0,1)</span></li>
+<li>Any population with unknown <span class="math inline">\sigma</span>, when <span class="math inline">m</span> large <span class="math display">Z = \frac{\overline{X} - \mu_0}{S / \sqrt{m}} \sim \mathsf{N}(0,1)</span></li>
+<li>Normal population with unknown <span class="math inline">\sigma</span>, <span class="math inline">m</span> may be small <span class="math display">T = \frac{\overline{X} - \mu_0}{S / \sqrt{m}} \sim \mathsf{t}(m-1)</span></li>
+</ol>
+<aside class="notes">
+<ul>
+<li>Once we have sample data we make point estimate!</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
-<section id="what-are-point-estimates" class="title-slide slide level1 mySegue center">
-<h1>What are point estimates?</h1>
+<section id="freshman-15" class="title-slide slide level1 mySegue center">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V224v64V448c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V384H64c-17.7 0-32-14.3-32-32V288c-17.7 0-32-14.3-32-32s14.3-32 32-32V160c0-17.7 14.3-32 32-32H96V64zm448 0v64h32c17.7 0 32 14.3 32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32v64c0 17.7-14.3 32-32 32H544v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V288 224 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32zM416 224v64H224V224H416z"></path></svg> Freshman 15</h1>
+<blockquote>
+<p>A common belief among the lay public is that body weight increases after entry into [university], and the phrase “freshman 15” has been coined to describe the 15 pounds that students presumably gain over their freshman [i.e.&nbsp;first] year. (from Devore, exm #8.2)</p>
+</blockquote>
+</section>
+<section id="example-2n" class="slide level2 smaller">
+<h2>Example (2/n)</h2>
+<p>Let <span class="math inline">\mu</span> denote the true average weight gain of women over the course of their first year at university. The foregoing quote suggests that we should test the hypotheses <span class="math inline">H_0: \mu = 15</span> versus <span class="math inline">H_a : \mu \neq 15</span>.</p>
+<p>Suppose that a random sample of <span class="math inline">m</span> such individuals is selected and the weight gain of each one is determined, resulting in a sample mean weight gain <span class="math inline">\overline{x}</span> and a sample standard deviation <span class="math inline">s</span>.</p>
+<aside class="notes">
+<ul>
+<li>Before data is obtained, the sample mean weight gain is a random variable <span class="math inline">X</span> and the sample standard deviation is also a random variable <span class="math inline">S</span>!</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-3n" class="slide level2">
+<h2>Example (3/n)</h2>
+<aside class="notes">
+<ul>
+<li><span class="math display">Z = \frac{\overline{X} - \mu}{\sigma/ \sqrt{m}}</span></li>
+<li>Assuming <span class="math inline">H_0</span> is true: <span class="math display">Z = \frac{\overline{X} - 15}{\sigma/ \sqrt{m}}</span></li>
+<li>But don’t know <span class="math inline">\sigma</span>: <span class="math display">Z = \frac{\overline{X} - 15}{S/ \sqrt{m}} \sim \mathsf{N}(0,1)</span></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-4n" class="slide level2">
+<h2>Example (4/n)</h2>
+<p>Suppose <span class="math inline">\overline{x} = 13.7</span> and plugging in values for <span class="math inline">s</span> and <span class="math inline">\sqrt{n}</span> yields <span class="math inline">z = -2.8</span>.</p>
+<p>Which values of the test statistic are at least as contradictory to <span class="math inline">H_0</span> as <span class="math inline">-2.80</span> itself?</p>
+<aside class="notes">
+<ul>
+<li>E.g., <span class="math inline">m = 40</span> and <span class="math inline">s = 2.936401</span></li>
+<li>Possible values: 13.5, 13.0, any value smaller than 13.7 is more contradictory to <span class="math inline">H_0</span> than 13.7</li>
+<li>16.3 is just as contradictory to <span class="math inline">H_0</span> as is 13.7; both fall the same distance from the null value 15</li>
+<li>Just as values of <span class="math inline">\overline{x}</span> that are at most 13.7 correspond to <span class="math inline">z\leq -2.8</span>, values of <span class="math inline">\overline{x}</span> that are at least 16.3 correspond to <span class="math inline">z \geq 2</span></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-5n" class="slide level2">
+<h2>Example (5/n)</h2>
+<p><span class="math inline">P( Z \leq -2.80 \quad \text{or}\quad  Z \geq 2.80 \quad \text{assuming } H_0 \text{ true})</span></p>
+<aside class="notes">
+<p><span class="math inline">\approx 2 \cdot</span> (area under the <span class="math inline">z</span> curve ot the right of 2.80) $= 2[1 - (2.80)] = 2[1 - 0.9974] = 0.0052</p>
+<ul>
+<li>If the null hypothesis is in fact true, only about one half of one percent of all samples would result in a test statistic value at least as contradictory to the null hypothesis as is our value. Clearly -2.80 is among the possible test statistic values that are most contradictory to <span class="math inline">H_0</span>.</li>
+<li>The evidence suggest to reject <span class="math inline">H_0</span>.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-6n" class="slide level2 smaller">
+<h2>Example (6/n)</h2>
+<p>The article <em>Freshman 15: Fact or Fiction</em> (Obesity, 2006: 1438– 1443), for <span class="math inline">m = 137</span> students, the <span class="math inline">\overline{x} = 2.42</span> lb with <span class="math inline">s =  5.72</span> lb.</p>
+<p>This gives <span class="math display">z = (2.42 - 15)/(5.72 /\sqrt{137}) = -25.7\,.</span></p>
+<p>The probability of observing a value at least this extreme in either direction is essentially zero!</p>
+<p>The data very strongly contradicts the null hypothesis, and there is substantial evidence that true average weight gain is much closer to <span class="math inline">0</span> than to <span class="math inline">15</span>.</p>
+<aside class="notes">
+<ul>
+<li>Note this implies some students lost weight!</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="inference-for-proportions" class="title-slide slide level1 mySegue center">
+<h1>Inference for proportions</h1>
 
 </section>
-<section id="a-point-estimator" class="slide level2">
-<h2>A point estimator</h2>
-<p>Consider iid <span class="math inline">X_1, X_2, \dots, X_m \sim F(\theta)\,.</span></p>
-<p>A point estimator <span class="math inline">\widehat{\theta}_m</span> of <span class="math inline">\theta</span> is obtained by selecting a suitable statistic <span class="math inline">g\,,</span> <span class="math display">
-  \widehat{\theta}_m = g(X_1, \dots, X_m) \,.
+<section id="derivation-point-estimate-for-p" class="slide level2 smaller">
+<h2>(Derivation) point estimate for <span class="math inline">p</span></h2>
+<p>Let <span class="math inline">X</span> be the count of members with a given property based on a sample of size <span class="math inline">m</span> from a population where a proportion <span class="math inline">p</span> share the property.</p>
+<p>Then <span class="math inline">\widehat{p} = X / m</span> is an estimator of <span class="math inline">p</span>.</p>
+<p>Assume <span class="math inline">m p_0 \geq 10</span> and <span class="math inline">m (1-p_0) \geq 10</span>.</p>
+<h3 id="for-example">For example</h3>
+<p><span class="math inline">p\in (0,1)</span> and consider iid Bernoulli trials <span class="math inline">X_1, \dots, X_m \sim \mathsf{Bernoulli}(p)</span>.</p>
+<p><span class="math inline">\widehat{p} = \frac{1}{m} \sum_{i=1}^m X_i\,, \qquad  \mu_{\widehat{p}} = \mathop{\mathrm{\mathbf{E}}}X_i = p\,, \qquad \sigma_{\widehat{p}} = \sqrt{\frac{\mathop{\mathrm{Var}}{X_i}}{m}} = \sqrt{\frac{p(1-p)}{m}}</span></p>
+</section>
+<section id="alpha-ci-for-p" class="slide level2">
+<h2><span class="math inline">100(1-\alpha)\%</span> CI for <span class="math inline">p</span></h2>
+<p><span class="math display">\widehat{p} \pm z_{\alpha/2} \sqrt{\frac{\widehat{p}(1-\widehat{p})}{m}}</span></p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Compare to CI for population mean…</strong></p>
+</div>
+<div class="callout-content">
+<p>How is the standard error different from the standard error for estimate of mean?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="hypothesis-test-for-p-at-level-alpha" class="slide level2 smaller">
+<h2>Hypothesis test for <span class="math inline">p</span> at level <span class="math inline">\alpha</span></h2>
+<p>Consider <span class="math inline">H_0 : p = p_0</span>. The test statistic is <span class="math display">
+Z = \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \,.
 </span></p>
-<aside class="notes">
+<p>For a hypothesis test at level <span class="math inline">\alpha</span>, we use the following procedure:</p>
 <ul>
-<li>Consider rvs <span class="math inline">X_i \sim F(\theta)</span> (general distribution)</li>
-<li>Recall <span class="math inline">\theta</span> a fixed, unknown quantity</li>
-<li>NOTE <span class="math inline">X_i</span> ARE RVS! not observations (data points)</li>
+<li>If <span class="math inline">H_a : p &gt; p_0</span>, then <span class="math inline">P</span>-value is the area under <span class="math inline">\mathsf{N}(0,1)</span> to the right of <span class="math inline">z</span>.</li>
+<li>If <span class="math inline">H_a : p &lt; p_0</span>, then <span class="math inline">P</span>-value is the area under <span class="math inline">\mathsf{N}(0,1)</span> to the left of <span class="math inline">z</span>.</li>
+<li>If <span class="math inline">H_a : p \neq p_0</span>, then <span class="math inline">P</span>-value is twice the area under <span class="math inline">\mathsf{N}(0,1)</span> to the right of <span class="math inline">|z|</span>.</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section></section>
+<section>
+<section id="how-much-water" class="title-slide slide level1 mySegue center">
+<h1>How much water? &nbsp;&nbsp;<svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg></h1>
+
 </section>
-<section id="closing-the-deal-point-estimate" class="slide level2">
-<h2>Closing the deal: point estimate</h2>
-<p>A point estimate of a parameter <span class="math inline">\theta</span> is a single number that we regard as a sensible value for <span class="math inline">\theta\,.</span></p>
-<p>A point estimate <span class="math inline">\widehat{\theta}_m</span> is computed from an estimator using sample data.</p>
+<section id="the-question" class="slide level2 mySegue center">
+<h2>The question</h2>
+<p>How might you estimate the proportion of the earth covered by water?</p>
+</section>
+<section id="sampling" class="slide level2">
+<h2>Sampling</h2>
+<p>If we were to take a random sample of points on the globe, then the proportion that touched water would be a reasonable estimate of the overall proportion of water covering the earth.</p>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Overloaded notation</strong></p>
+<p><strong>Remember the candy!</strong></p>
 </div>
 <div class="callout-content">
-<p>The symbol <span class="math inline">\widehat{\theta}_m</span> is typically used to denote <em>both</em> the estimator and the point estimate resulting from a given sample.</p>
+<p>Are random samples always representative? How can we take a random representative sample from globe (sphere)?</p>
 </div>
 </div>
 </div>
-<aside class="notes">
-<ul>
-<li>Likewise, we refer to statistics: used for <em>both</em> the estimator and the estimate.</li>
-<li>Writing <span class="math inline">\widehat{\theta} = 42</span> does not indicate how the point estimate was obtained; therefore, it is essential to report both the estimator and the resulting point estimate.</li>
-<li>In addition, we should also report a measure of precision in our estimate.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="uncertainty-in-a-point-estimate" class="slide level2">
-<h2>Uncertainty in a point estimate</h2>
+<section id="the-task" class="slide level2">
+<h2><svg aria-hidden="true" role="img" viewbox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M297.2 248.9C311.6 228.3 320 203.2 320 176c0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9c3.7 5.3 8.1 11.3 12.8 17.7l0 0c12.9 17.7 28.3 38.9 39.8 59.8c10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5c-9.9-18-22.2-34.9-34.5-51.8l0 0 0 0c-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176C16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3c-5 7.2-10.2 14.3-15.4 21.4l0 0 0 0c-12.3 16.8-24.6 33.7-34.5 51.8c-5.9 10.8-9.6 22.5-11.8 34.5H226.4c2.6-18.7 7.9-38.6 18.3-57.5c11.5-20.9 26.9-42.1 39.8-59.8l0 0 0 0 0 0c4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80c8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80V416H272v16c0 44.2-35.8 80-80 80z"></path></svg> The task</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ol type="1">
+<li>The globe will be tossed around.</li>
+<li>Hit the globe with the tip of your index finger.</li>
+<li>Shout:
 <ul>
-<li><p>The standard error is one measure of the precision of an estimate.</p></li>
-<li><p>The standard error of an estimator <span class="math inline">\widehat{\theta}</span> is the standard deviation: <span class="math display">
-\sigma_{\widehat{\theta}} = \sqrt{\mathop{\mathrm{Var}}(\widehat{\theta})}\,.
-</span></p></li>
-<li><p>Estimated standard error is denoted by <span class="math inline">\widehat{\sigma}_{\widehat{\theta}}</span> or simply <span class="math inline">s_{\widehat{\theta}}\,.</span></p></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Often, the standard error depends on unknown parameters and must also be estimated.</li>
-<li>Standard error is sometimes denoted <span class="math inline">\mathsf{se} = \mathsf{se}(\widehat{\theta})</span> and the estimated standard error by <span class="math inline">\widehat{\mathsf{se}}\,.</span></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="what-are-confidence-intervals" class="title-slide slide level1 mySegue center">
-<h1>What are confidence intervals?</h1>
-
-</section>
-<section id="a-confidence-interval" class="slide level2">
-<h2>A confidence interval</h2>
-<ul>
-<li><p>An interval estimate reports an entire range of plausible values for the parameter of interest.</p></li>
-<li><p>A confidence interval (CI) is an interval estimate that makes a probability statement about the degree of reliability, or the confidence level, of the interval.</p></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Alternative to reporting a point estimate for a parameter!</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="ci-definition" class="slide level2 smaller">
-<h2>CI definition</h2>
-<p>A <span class="math inline">100(1-\alpha)\%</span> confidence interval for a parameter <span class="math inline">\theta</span> is a <em>random</em> interval, <span class="math display">C_m = (L_m , U_m)\,,</span> where <span class="math inline">L_m = \ell(X_1, \dots, X_m)</span> and <span class="math inline">U_m = u(X_1, \dots, X_m)</span> are functions of the data, such that, <span class="math display">
-  P_{\theta}(L_m &lt; \theta &lt; U_m ) = 1 - \alpha\,,
-</span> for all <span class="math inline">\theta \in \Theta</span> (the parameter space).</p>
-<aside class="notes">
-<ul>
-<li>The CI represents values for the population parameter for which the difference between the parameter and the observed estimate is not statistically significant at the <span class="math inline">\alpha</span> level.</li>
-<li>If the true value of the parameter lies outside the <span class="math inline">100(1-\alpha)\%</span> confidence interval, then a sampling event has occurred (namely, obtaining a point estimate of the parameter at least this far from the true parameter value) which had a probability of <span class="math inline">100\alpha\%</span> (or less) of happening by chance.</li>
-<li>Not a probability statement about the parameter <span class="math inline">\theta\,.</span></li>
-<li>Note that <span class="math inline">\theta</span> is fixed (<span class="math inline">\theta</span> is not a rv) and the interval <span class="math inline">C_m</span> is random.</li>
-<li>After data has been collected and a point estimator has been calculated, the resulting CIs either contain the true parameter value or they do not.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="what-a-ci-is-not" class="slide level2">
-<h2>What a CI is not…</h2>
-<ul>
-<li class="fragment">A <span class="math inline">95\%</span> confidence level does not mean there is a <span class="math inline">95\%</span> probability that the population parameter lies within a given interval.</li>
-<li class="fragment">A <span class="math inline">95\%</span> confidence level does not mean that <span class="math inline">95\%</span> of the sample data lie within the confidence interval.</li>
-<li class="fragment">A particular confidence level of <span class="math inline">95\%</span> calculated from an experiment does not mean that there is a <span class="math inline">95\%</span> probability of a sample parameter from a repeat of the experiment falling within this interval.</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Nothing special about the number 95 here.</li>
-<li>For 1st: i.e., a 95% probability that the interval covers the population parameter.</li>
-<li>Once an interval is calculated, this interval either covers the parameter value or it does not!</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="what-are-hypothesis-tests" class="title-slide slide level1 mySegue center">
-<h1>What are hypothesis tests?</h1>
-
-</section>
-<section id="two-hypotheses" class="slide level2">
-<h2>Two hypotheses</h2>
-<p>Methods for determining which of two contradictory claims, or <em>hypotheses</em>, about a parameter is correct.</p>
-<ul>
-<li><span class="math inline">H_0</span> the <strong>null hypothesis</strong> is a claim that we initially assume to be true by default.</li>
-<li><span class="math inline">H_a</span> the <strong>alternative hypothesis</strong> is an assertion that is contradictory to <span class="math inline">H_0\,.</span></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Typically, we shall consider hypothesis concerning a parameter <span class="math inline">\theta \in \Theta</span> taking values in a parameter space.</li>
-<li>The statistical hypothesis are contradictory in that <span class="math inline">H_0</span> and <span class="math inline">H_a</span> divide <span class="math inline">\Theta</span> into two disjoint sets.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="hypothesis-testing" class="slide level2 smaller">
-<h2>Hypothesis testing</h2>
-<ul>
-<li><p>A hypothesis test is a statistical procedure.</p></li>
-<li><p>The test procedure is based on the initial assumption that <span class="math inline">H_0</span> is <strong>true</strong> and asks if the available data provides sufficient evidence to reject <span class="math inline">H_0\,.</span></p></li>
-<li><p>If the observations disagree with <span class="math inline">H_0\,,</span> then we reject the null hypothesis. On the other hand, if the sample evidence does not strongly contradict <span class="math inline">H_0\,,</span> then we continue to believe <span class="math inline">H_0\,.</span></p></li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>No “accepting” the null</strong></p>
-</div>
-<div class="callout-content">
-<p>The two possible conclusions of a hypothesis test are: <strong>reject <span class="math inline">H_0</span></strong> or <strong>fail to reject <span class="math inline">H_0\,.</span></strong></p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<ul>
-<li><em>Fail to reject <span class="math inline">H_0</span></em> is sometimes phrased <em>retain <span class="math inline">H_0</span></em> or (perhaps less accurately) <em>accept <span class="math inline">H_0</span></em></li>
-<li>Why not just <em>accept</em> the null and move on with our lives? Well, if I search the Highlands for the Scottish wildcat (critically endangered) and fail to find any, does that prove they do not exist?</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="know-when-to-fold-em" class="slide level2">
-<h2>Know when to fold ’em</h2>
-<ul>
-<li><p>What does evidence for a hypothesis test look like?</p></li>
-<li><p>A test statistic <span class="math inline">T</span> is a function of the sample data (like an estimator).</p></li>
-<li><p>The decision to reject or fail to reject <span class="math inline">H_0</span> will involve computing the test statistic.</p></li>
-</ul>
-</section>
-<section id="how-extreme-is-the-evidence" class="slide level2">
-<h2>How extreme is the evidence?</h2>
-<ul>
-<li><p>A rejection region <span class="math inline">R</span> is the collection of values of the test statistic for which <span class="math inline">H_0</span> is to be rejected in favor of the alternative: <span class="math display">
-R = \left\{ x : T(x) &gt; c \right\}\,,
-</span> where <span class="math inline">c</span> is referred to as a critical value.</p></li>
-<li><p>For observed test statistic <span class="math inline">t</span>, if <span class="math inline">t \in R</span> then we reject <span class="math inline">H_0\,.</span> The alternative is that <span class="math inline">t \not\in R</span> and in this case we fail to reject <span class="math inline">H_0\,.</span></p></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>A procedure for carrying out a hypothesis test is based on specifying two additional items:
-<ul>
-<li>test statistic</li>
-<li>corresponding rejection region.</li>
+<li>“water!” if your finger touches water, or</li>
+<li>“land!” if your finger touches land.</li>
 </ul></li>
-<li>If a given sample falls in the rejection region, then we reject <span class="math inline">H_0\,.</span></li>
-<li>If <span class="math inline">X \in R</span> then the calculated test statistic exceeds some critical value.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="recall-critical-values" class="slide level2">
-<h2>Recall: critical values</h2>
-<p>Critical values are quantiles of the reference distribution. Critical values are NOT areas.</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="seminar03_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<ul>
-<li>Using R: <code>q</code>+distname, e.g., <code>qnorm</code>, <code>qt</code>, <code>qchisq</code>, …</li>
-<li>Using table</li>
-</ul>
-</div>
-</div>
-<aside class="notes">
-<ul>
-<li><span class="math inline">\chi^2</span> distribution is not symmetric! <span class="math inline">\mathsf{N}</span> and <span class="math inline">\mathsf{t}</span> are symmetric.</li>
-<li>For <span class="math inline">\alpha/2 = 0.025\,,</span> <span class="math inline">z_{\alpha/2} = 1.96\,.</span></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="balancing-act" class="slide level2">
-<h2>Balancing act</h2>
-<p>The basis for choosing a rejection region involves balancing <strong>Type I</strong> and <strong>Type II</strong> errors. A conclusion is reached in a hypothesis test by selecting a significance level <span class="math inline">\alpha</span> for the test linked to the maximal type I error rate.</p>
-<ul>
-<li>Type I error occurs if <span class="math inline">H_0</span> is rejected when <span class="math inline">H_0</span> is actually true.</li>
-<li>Type II error is made if we fail to reject <span class="math inline">H_0</span> when <span class="math inline">H_0</span> is actually false.</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Fix <span class="math inline">\alpha</span> first!</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="how-do-p-values-fit" class="slide level2">
-<h2>How do <span class="math inline">P</span>-values fit?</h2>
-<p>A <span class="math inline">P</span>-value is the probability, assuming <span class="math inline">H_0</span> is true, of obtaining a test statistic at least as contradictory to <span class="math inline">H_0</span> as the value calculated from the sample data.</p>
-<p>Smaller <span class="math inline">P</span>-values indicate stronger evidence against <span class="math inline">H_0\,.</span></p>
-<ul>
-<li>If <span class="math inline">P \leq \alpha</span> then we reject <span class="math inline">H_0</span> at significance level <span class="math inline">\alpha\,.</span></li>
-<li>If <span class="math inline">P \geq \alpha</span> we fail to reject <span class="math inline">H_0</span> at significance level <span class="math inline">\alpha\,.</span></li>
-</ul>
-</section>
-<section id="the-skinny-on-hypothesis-testing" class="slide level2 smaller">
-<h2>The skinny on hypothesis testing</h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Two routes to the same answer!</strong></p>
-</div>
-<div class="callout-content">
-<p>But both are really the same.</p>
-</div>
-</div>
-</div>
-<h3 id="one-way">One way:</h3>
-<ol type="1">
-<li>Compute the value of an appropriate test statistic.</li>
-<li>Determine the <span class="math inline">P</span>-value, probability calculated assuming the null is true of observing a test statistic value at least as contradictory to <span class="math inline">H_0</span> as what was obtained from data.</li>
-<li>For given <span class="math inline">\alpha\,,</span> reject <span class="math inline">H_0</span> if evidence is strong, i.e.&nbsp;<span class="math inline">P &lt; \alpha\,.</span> If evidence is not strong enough, fail to reject <span class="math inline">H_0\,.</span></li>
+<li>We will record your observation.</li>
 </ol>
-</section>
-<section id="the-skinny-on-hypothesis-testing-1" class="slide level2 smaller">
-<h2>The skinny on hypothesis testing</h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Two routes to the same answer!</strong></p>
-</div>
-<div class="callout-content">
-<p>But both are really the same.</p>
-</div>
-</div>
-</div>
-<h3 id="another-way">Another way:</h3>
-<ol type="1">
-<li>Compute the value of an appropriate test statistic.</li>
-<li>Determine the critical value for the level <span class="math inline">\alpha</span> and hence identify the rejection region for the hypothesis test.</li>
-<li>If statistic falls in rejection region, reject <span class="math inline">H_0</span> because evidence is strong. If statistic falls outwith rejection region, we fail to reject <span class="math inline">H_0</span> because evidence is not strong enough.</li>
-</ol>
-</section>
-<section id="null-distribution" class="slide level2 smaller">
-<h2>Null distribution</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><img data-src="images/htests.png" alt="Pictoral representation of null distribution, with level and rejection region."></p>
 </div><div class="column" style="width:40%;">
-<p>E.g., consider hypothesis tests for a population mean.</p>
-<ul>
-<li>Distribution for <span class="math inline">\bar{X}</span></li>
-<li>Under the assumption that <span class="math inline">H_0</span> is true, so curve is centered at <span class="math inline">\mu_0</span></li>
-<li>Level <span class="math inline">\alpha</span> is a probability (area)</li>
-<li>Critical value <span class="math inline">c</span> is a point</li>
-<li>Test statistic?</li>
-</ul>
+<p><img data-src="images/globe.jpg" style="height:100.0%" data-fig.alt="Photo of large inflatable globe (topographic)."></p>
+<p><strong>Do not flinch ;)</strong></p>
 </div>
+</div>
+</section>
+<section id="the-result" class="slide level2">
+<h2>The result</h2>
+<p>Let <span class="math inline">p</span> be the proportion of earth’s surface covered with water.</p>
+<ul>
+<li>Point estimate <span class="math inline">\hat{p}</span></li>
+<li>Confidence interval for <span class="math inline">p</span></li>
+<li>Hypothesis test: <span class="math inline">p</span> is 0.7?</li>
+</ul>
+</section>
+<section id="challenge" class="slide level2">
+<h2>Challenge:</h2>
+<p>How could one use random numbers from the computer to pick a random spot on the globe?</p>
+<p>Any point is characterized by a latitude (which must be between 90◦ North and 90◦ South) and a longitude (between 180◦ West and 180◦ East).</p>
+<div class="importantblock">
+<p>Can you pick a random spot on the globe by picking a latitude between −90 to 90 at random, and a longitude between −180 and 180 at random?</p>
 </div>
 </section></section>
 <section>
-<section id="why-0.05" class="title-slide slide level1 mySegue center">
-<h1>Why 0.05?</h1>
+<section id="churchill" class="title-slide slide level1 mySegue center">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32V224v64V448c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V384H64c-17.7 0-32-14.3-32-32V288c-17.7 0-32-14.3-32-32s14.3-32 32-32V160c0-17.7 14.3-32 32-32H96V64zm448 0v64h32c17.7 0 32 14.3 32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32v64c0 17.7-14.3 32-32 32H544v64c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32V288 224 64c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32zM416 224v64H224V224H416z"></path></svg> Churchill</h1>
 
 </section>
-<section id="emily-dickinson-and-monkeys-on-the-stair" class="slide level2 smaller">
-<h2>Emily Dickinson and monkeys on the stair</h2>
-
-<img data-src="images/Batu_3.jpg" alt="Photo of a monkey (Sarah Lee, Wikimedia Commons, CC BY-SA 4.0.)" class="r-stretch quarto-figure-center"><p class="caption">Sarah Lee, Wikimedia Commons, CC-BY-SA 4.0</p></section>
-<section id="personal-significance-level" class="slide level2">
-<h2>Personal significance level</h2>
-<p>What is our MA22004 personal significance level?</p>
-<p><a href="https://www.openintro.org/book/stat/why05/">www.openintro.org/book/stat/why05/</a></p>
+<section id="example-churchill-1n" class="slide level2">
+<h2>Example: Churchill 1/n</h2>
+<p>Churchill claims that he will receive half the votes for the House of Commons seat for the constituency of Dundee.</p>
+<p>We are skeptical that he is as popular as he says. Suppose 116 out of 263 Dundonians polled claimed that they intended to vote for Churchill.</p>
+<p>Can it be concluded at significance level <span class="math inline">0.10</span> that more than half of all eligible Dundonains will vote for Churchill?</p>
+</section>
+<section id="example-churhill-2n" class="slide level2">
+<h2>Example: Churhill 2/n</h2>
+<div class="tipblock">
+<p>What is the parameter of interest? What are the null and alternative hypotheses?</p>
+</div>
+</section>
+<section id="example-churhill-3n" class="slide level2">
+<h2>Example: Churhill 3/n</h2>
+<p>The parameter of interest is <span class="math inline">p</span>, the proportion of votes for Churchill.</p>
+<p>The null hypothesis is <span class="math inline">H_0 : p = 0.5</span>.</p>
+<p>The alternative hypothesis is <span class="math inline">H_a : p &lt; 0.5</span>.</p>
+<div class="warningblock">
+<p>Since <span class="math inline">263(0.5) = 131.5 &gt; 10</span>, we satisfy the assumptions to carry out the hypothesis test using the statistic described earlier.</p>
+</div>
+</section>
+<section id="example-churhill-4n" class="slide level2">
+<h2>Example: Churhill 4/n</h2>
+<p>Based on the sample, <span class="math inline">\widehat{p} = 116 / 263 = 0.4411</span>.</p>
+<p>The test statistic value is <span class="math display">
+\begin{aligned}
+z &amp;= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
+&amp;= \frac{0.4411 - 0.5}{\sqrt{0.5 (1-0.5) / 263}}\\
+&amp;= −1.91 \,.
+\end{aligned}
+</span></p>
+<p>The <span class="math inline">P</span>-value for this lower-tailed <span class="math inline">z</span> test is <span class="math inline">P = \Phi(−1.91) = 0.028</span>.</p>
+</section>
+<section id="example-churhill-5n" class="slide level2">
+<h2>Example: Churhill 5/n</h2>
+<p>Since <span class="math inline">P &lt; 0.10 = \alpha</span>, we reject the null hypothesis at the <span class="math inline">0.05</span> level.</p>
+<div class="warningblock">
+<p>What does this mean in words? Always place the result of the hypothesis test in the context of the problem!</p>
+</div>
+</section>
+<section id="example-churhill-6n-conclusion" class="slide level2">
+<h2>Example: Churhill 6/n (conclusion)</h2>
+<p>The evidence for concluding that the true proportion is different from <span class="math inline">p_0 = 0.5</span> at the <span class="math inline">0.10</span> level is compelling.</p>
 </section></section>
 <section id="summary" class="title-slide slide level1 center">
 <h1>Summary</h1>
-<p>Today we discussed: (point estimation), confidence intervals, and hypothesis tests.</p>
-<p>We engaged in an activity to understand “Why 0.05?”</p>
+<p>Today we discussed: inferences for population means (and proportions, which are like population means…)</p>
+<p>We engaged in an activity about inferences for proportions that highlighted importance of representative sampling.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -892,7 +802,7 @@ R = \left\{ x : T(x) &gt; c \right\}\,,
 <p><strong>Today’s materials</strong></p>
 </div>
 <div class="callout-content">
-<p>Slides posted to <a href="https://dundeemath.github.io/MA22004-seminar03" class="uri">https://dundeemath.github.io/MA22004-seminar03</a>.</p>
+<p>Slides posted to <a href="https://dundeemath.github.io/MA22004-seminar04" class="uri">https://dundeemath.github.io/MA22004-seminar04</a>.</p>
 </div>
 </div>
 </div>

@@ -1,0 +1,217 @@
+---
+title: "MA22004"
+subtitle: "Seminar 04"
+author: "Dr Eric Hall   •   ehall001@dundee.ac.uk"
+date: "2023-10-11"
+output: 
+ ioslides_presentation:
+   widescreen: true
+   css: ../assets/style.css
+   logo: ../assets/images/rev_logo.png
+---
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{\mathbf{E}}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\corr}{corr}
+\newcommand{\se}{\mathsf{se}}
+\DeclareMathOperator{\sd}{sd}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = "", fig.asp = .5)
+library(tidyverse)
+library(latex2exp)
+library(knitr)
+library(kableExtra)
+library(janitor)
+library(fontawesome)
+library(latex2exp)
+
+theme_ur <- theme(legend.justification = c(1,1), legend.position = c(1,1), legend.box.margin = margin(c(4, 4, 4, 4), unit = "pt"))
+theme_lr <- theme(legend.justification = c(1,0), legend.position = c(1,0), legend.box.margin = margin(c(4, 4, 4, 4), unit = "pt"))
+theme_ul <- theme(legend.justification = c(0,1), legend.position = c(0,1), legend.box.margin = margin(c(4, 4, 4, 4), unit = "pt"))
+options(width = 90, knitr.kable.NA = '', "kableExtra.html.bsTable" = T)
+lsz <- 1.0
+tsz <- 4
+```
+
+## {.mySegue .flexbox .vcenter}
+
+:::{.checkinblock}
+Please register your attendance using SEAtS. 
+:::
+
+## Announcements &nbsp;&nbsp;`r fa("bullhorn")`
+
+### Reminders 
+
+- Discuss labs, R, and RStudio at Thu workshop (feedback posted tonight). 
+- Discuss worksheet 3 at Fri workshop.
+- Lab 2 due **Fri 2023-10-13** at **17:00**. 
+
+## Outline of today &nbsp;&nbsp;`r fa("compass")`
+
+1. Estimating proportions
+
+2. How much water? &nbsp;&nbsp;`r fa("lightbulb")`
+
+3. Churchill &nbsp;&nbsp;`r fa("dumbbell")`
+
+## {.mySegue .flexbox .vcenter}
+Estimating proportions
+
+## Estimating Proportions $p$
+
+Let $X$ be the count of members with a given property based on a sample of size $m$ from a population where a proportion $p$ share the property.
+
+Then $\widehat{p} = X / m$ is an estimator of $p$. 
+
+Assume $m p_0 \geq 10$ and $m (1-p_0) \geq 10$. 
+
+### Eg.
+
+$p\in (0,1)$ and consider iid Bernoulli trials $X_1, \dots, X_m \sim \mathsf{Bernoulli}(p)$.
+
+$\widehat{p} = \frac{1}{m} \sum_{i=1}^m X_i\,, \qquad  \mu_{\widehat{p}} = \E X_i = p\,, \qquad \sigma_{\widehat{p}} = \sqrt{\frac{\Var{X_i}}{m}} = \sqrt{\frac{p(1-p)}{m}}$
+
+
+## $100(1-\alpha)\%$ CI for $p$
+
+\[\widehat{p} \pm z_{\alpha/2} \sqrt{\frac{\widehat{p}(1-\widehat{p})}{m}}\]
+
+:::{.tipblock}
+How is the standard error different from the standard error for estimate of mean?
+:::
+
+## Hypothesis test for $p$ at level $\alpha$:
+
+Consider $H_0 : p = p_0$. The test statistic is
+\[
+ Z = \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \,.
+\]
+
+For a hypothesis test at level $\alpha$, we use the following procedure: 
+        
+If $H_a : p > p_0$, then $P$-value is the area under $\mathsf{N}(0,1)$ to the right of $z$.
+
+If $H_a : p < p_0$, then $P$-value is the area under $\mathsf{N}(0,1)$ to the left of $z$.
+
+If $H_a : p \neq p_0$, then $P$-value is twice the area under $\mathsf{N}(0,1)$ to the right of $|z|$.  
+
+## {.mySegue .flexbox .vcenter}
+How much water? &nbsp;&nbsp;`r fa("lightbulb")`
+
+## The question {.flexbox .vcenter}
+
+:::{.tipblock}
+How might you estimate the proportion of the earth covered by water?
+:::
+
+## Sampling {.flexbox .vcenter}
+
+If we were to take a random sample of points on the globe, then the proportion that touched water would be a reasonable estimate of the overall proportion of water covering the earth.
+
+:::{.warningblock}
+How to take a random (i.e. representative) sample?
+:::
+
+## `r fa("lightbulb")` &nbsp;&nbsp;The task {.columns-2 .vcenter}
+
+1. The globe will be tossed around.
+2. Hit the globe with the tip of your index finger.
+3. Shout:
+    - "water!" if your finger touches water, or 
+    - "land!" if your finger touches land.
+4. We will record your observation.
+
+**Do not flinch ;)**
+
+![](images/globe.jpg){width=100% alt="Photo of large inflatable globe (topographic)."}
+
+## The result
+
+Let \(p\) be the proportion of earth's surface covered with water.
+
+- Point estimate \(\hat{p}\)
+- Confidence interval for \(p\)
+- Hypothesis test: \(p\) is 0.7?
+
+## Challenge:
+
+How could one use random numbers from the computer to pick a random spot on the globe?
+
+Any point is characterized by a latitude (which must be between 90◦ North and 90◦ South) and a longitude (between 180◦ West and 180◦ East). 
+
+:::{.importantblock}
+Can you pick a random spot on the globe by picking a latitude between −90 to 90 at random, and a longitude between −180 and 180 at random? 
+:::
+
+
+## {.mySegue .flexbox .vcenter}
+Churchill &nbsp;&nbsp;`r fa("dumbbell")`
+
+## Example: Churchill 1/n
+
+Churchill claims that he will receive half the votes for the House of Commons seat for the constituency of Dundee. 
+
+We are skeptical that he is as popular as he says. Suppose 116 out of 263 Dundonians polled claimed that they intended to vote for Churchill. 
+
+Can it be concluded at significance level $0.10$ that more than half of all eligible Dundonains will vote for Churchill?
+
+## Example: Churhill 2/n
+
+:::{.tipblock}
+What is the parameter of interest? What are the null and alternative hypotheses? 
+:::
+
+## Example: Churhill 3/n
+
+The parameter of interest is $p$, the proportion of votes for Churchill.
+
+The null hypothesis is $H_0 : p = 0.5$. 
+
+The alternative hypothesis is $H_a : p < 0.5$. 
+
+:::{.warningblock}
+Since $263(0.5) = 131.5 > 10$, we satisfy the assumptions to carry out the hypothesis test using the statistic described earlier.
+:::
+
+## Example: Churhill 4/n
+
+Based on the sample, $\widehat{p} = 116 / 263 = 0.4411$. 
+
+The test statistic value is 
+\[
+\begin{aligned}
+ z &= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
+ &= \frac{0.4411 - 0.5}{\sqrt{0.5 (1-0.5) / 263}}\\
+ &= −1.91 \,.
+\end{aligned}
+\]
+
+The $P$-value for this lower-tailed $z$ test is  $P = \Phi(−1.91) = 0.028$. 
+
+## Example: Churhill 5/n
+
+Since $P < 0.10 = \alpha$, we reject the null hypothesis at the $0.05$ level. 
+
+:::{.warningblock}
+What does this mean in words? Always place the result of the hypothesis test in the context of the problem!
+:::
+
+## Example: Churhill 6/n (conclusion)
+
+The evidence for concluding that the true proportion is different from $p_0 = 0.5$ at the $0.10$ level is compelling.
+
+
+## Summary
+
+Today discussed point estimates, CI, and hypothesis tests for population proportions.
+
+
+
+
+
+
+
+
+
