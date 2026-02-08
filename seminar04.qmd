@@ -1,8 +1,8 @@
 ---
 title: "Seminar 04"
-subtitle: "MA22004"
-date: "2024-10-09"
-author: "Dr Eric Hall   •   ehall001@dundee.ac.uk"
+subtitle: "MA22004/MA52008"
+date: "2026-02-09"
+author: "Dr John McDermott   •   jzmcdermott@dundee.ac.uk"
 format: 
   revealjs:
     chalkboard: true
@@ -49,9 +49,9 @@ library(latex2exp)
 
 ## Reminders 
 
-- Discuss labs, R, and RStudio at Thu workshop. 
-- Discuss worksheet 3 at Fri workshop.
-- Lab 2 due **Fri 2024-10-11** at **17:00**. 
+- Discuss labs, R, and RStudio at Wed workshop. 
+- Discuss worksheet 3 at Thu workshop.
+- Lab 2 due **Fri 2026-02-13** at **17:00**. 
 
 
 ## Outline of today &nbsp;&nbsp;`r fa("compass")`
@@ -93,7 +93,7 @@ We consider inferences for the population mean assuming that samples are drawn f
 
 ## Confidence intervals for mean
 
-The basic form is awlays:
+The basic form is always:
 
 $$\text{pt est} \pm \underbrace{(\text{critical value}) \cdot (\text{precision of pt est})}_\text{margin of error}$$
 
@@ -312,15 +312,15 @@ Churchill claims that he will receive half the votes for the House of Commons se
 
 We are skeptical that he is as popular as he says. Suppose 116 out of 263 Dundonians polled claimed that they intended to vote for Churchill. 
 
-Can it be concluded at significance level $0.10$ that more than half of all eligible Dundonains will vote for Churchill?
+Can it be concluded at significance level $0.10$ that half of all eligible Dundonains will vote for Churchill?
 
-## Example: Churhill 2/n
+## Example: Churchill 2/n
 
 :::{.tipblock}
 What is the parameter of interest? What are the null and alternative hypotheses? 
 :::
 
-## Example: Churhill 3/n
+## Example: Churchill 3/n
 
 The parameter of interest is $p$, the proportion of votes for Churchill.
 
@@ -332,7 +332,7 @@ The alternative hypothesis is $H_a : p < 0.5$.
 Since $263(0.5) = 131.5 > 10$, we satisfy the assumptions to carry out the hypothesis test using the statistic described earlier.
 :::
 
-## Example: Churhill 4/n
+## Example: Churchill 4/n
 
 Based on the sample, $\widehat{p} = 116 / 263 = 0.4411$. 
 
@@ -340,14 +340,13 @@ The test statistic value is
 $$
 \begin{aligned}
  z &= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
- &= \frac{0.4411 - 0.5}{\sqrt{0.5 (1-0.5) / 263}}\\
- &= −1.91 \,.
+ &= \frac{0.4411 - 0.5}{\sqrt{0.5 (1-0.5) / 263}} = −1.91 \,.
 \end{aligned}
 $$
+The $P$-value for this lower-tailed $z$ test is 
+$$P = \Phi(−1.91) = 0.028$$.
 
-The $P$-value for this lower-tailed $z$ test is  $P = \Phi(−1.91) = 0.028$. 
-
-## Example: Churhill 5/n
+## Example: Churchill 5/n
 
 Since $P < 0.10 = \alpha$, we reject the null hypothesis at the $0.05$ level. 
 
@@ -355,7 +354,7 @@ Since $P < 0.10 = \alpha$, we reject the null hypothesis at the $0.05$ level.
 What does this mean in words? Always place the result of the hypothesis test in the context of the problem!
 :::
 
-## Example: Churhill 6/n (conclusion)
+## Example: Churchill 6/n (conclusion)
 
 The evidence for concluding that the true proportion is different from $p_0 = 0.5$ at the $0.10$ level is compelling.
 

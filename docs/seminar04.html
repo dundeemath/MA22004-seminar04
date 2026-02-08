@@ -8,10 +8,10 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.554">
+  <meta name="generator" content="quarto-1.5.43">
 
-  <meta name="author" content="Dr Eric Hall • ehall001@dundee.ac.uk">
-  <meta name="dcterms.date" content="2024-10-09">
+  <meta name="author" content="Dr John McDermott • jzmcdermott@dundee.ac.uk">
+  <meta name="dcterms.date" content="2026-02-09">
   <title>Seminar 04</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -33,7 +33,7 @@
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="resources/fonts.css">
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -48,7 +48,7 @@
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -349,10 +349,10 @@
   <img class="logo" src="resources/rev_logo.png" alt="University of Dundee Logo">
   <br>
   <h1 class="title">Seminar 04</h1>
-  <p class="subtitle">MA22004</p>
+  <p class="subtitle">MA22004/MA52008</p>
   <br>
-  <p class="author">Dr Eric Hall • ehall001@dundee.ac.uk</p>
-  <p class="date">2024-10-09</p>
+  <p class="author">Dr John McDermott • jzmcdermott@dundee.ac.uk</p>
+  <p class="date">2026-02-09</p>
 </section>
 <section>
 <section id="announcements" class="title-slide slide level1 mySegue center">
@@ -363,6 +363,9 @@
 </section>
 <section id="attendance" class="slide level2">
 <h2>Attendance</h2>
+<div>
+
+</div>
 <div class="quarto-layout-panel" data-layout="[[-1], [1], [-1]]">
 <div class="quarto-layout-row">
 <div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
@@ -383,9 +386,9 @@
 <section id="reminders" class="slide level2">
 <h2>Reminders</h2>
 <ul>
-<li>Discuss labs, R, and RStudio at Thu workshop.</li>
-<li>Discuss worksheet 3 at Fri workshop.</li>
-<li>Lab 2 due <strong>Fri 2024-10-11</strong> at <strong>17:00</strong>.</li>
+<li>Discuss labs, R, and RStudio at Wed workshop.</li>
+<li>Discuss worksheet 3 at Thu workshop.</li>
+<li>Lab 2 due <strong>Fri 2026-02-13</strong> at <strong>17:00</strong>.</li>
 </ul>
 </section>
 <section id="outline-of-today" class="slide level2">
@@ -433,7 +436,7 @@
 </section>
 <section id="confidence-intervals-for-mean" class="slide level2">
 <h2>Confidence intervals for mean</h2>
-<p>The basic form is awlays:</p>
+<p>The basic form is always:</p>
 <p><span class="math display">\text{pt est} \pm \underbrace{(\text{critical value}) \cdot (\text{precision of pt est})}_\text{margin of error}</span></p>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -749,16 +752,16 @@ Z = \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \,.
 <h2>Example: Churchill 1/n</h2>
 <p>Churchill claims that he will receive half the votes for the House of Commons seat for the constituency of Dundee.</p>
 <p>We are skeptical that he is as popular as he says. Suppose 116 out of 263 Dundonians polled claimed that they intended to vote for Churchill.</p>
-<p>Can it be concluded at significance level <span class="math inline">0.10</span> that more than half of all eligible Dundonains will vote for Churchill?</p>
+<p>Can it be concluded at significance level <span class="math inline">0.10</span> that half of all eligible Dundonains will vote for Churchill?</p>
 </section>
-<section id="example-churhill-2n" class="slide level2">
-<h2>Example: Churhill 2/n</h2>
+<section id="example-churchill-2n" class="slide level2">
+<h2>Example: Churchill 2/n</h2>
 <div class="tipblock">
 <p>What is the parameter of interest? What are the null and alternative hypotheses?</p>
 </div>
 </section>
-<section id="example-churhill-3n" class="slide level2">
-<h2>Example: Churhill 3/n</h2>
+<section id="example-churchill-3n" class="slide level2">
+<h2>Example: Churchill 3/n</h2>
 <p>The parameter of interest is <span class="math inline">p</span>, the proportion of votes for Churchill.</p>
 <p>The null hypothesis is <span class="math inline">H_0 : p = 0.5</span>.</p>
 <p>The alternative hypothesis is <span class="math inline">H_a : p &lt; 0.5</span>.</p>
@@ -766,27 +769,25 @@ Z = \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \,.
 <p>Since <span class="math inline">263(0.5) = 131.5 &gt; 10</span>, we satisfy the assumptions to carry out the hypothesis test using the statistic described earlier.</p>
 </div>
 </section>
-<section id="example-churhill-4n" class="slide level2">
-<h2>Example: Churhill 4/n</h2>
+<section id="example-churchill-4n" class="slide level2">
+<h2>Example: Churchill 4/n</h2>
 <p>Based on the sample, <span class="math inline">\widehat{p} = 116 / 263 = 0.4411</span>.</p>
 <p>The test statistic value is <span class="math display">
 \begin{aligned}
 z &amp;= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
-&amp;= \frac{0.4411 - 0.5}{\sqrt{0.5 (1-0.5) / 263}}\\
-&amp;= −1.91 \,.
+&amp;= \frac{0.4411 - 0.5}{\sqrt{0.5 (1-0.5) / 263}} = −1.91 \,.
 \end{aligned}
-</span></p>
-<p>The <span class="math inline">P</span>-value for this lower-tailed <span class="math inline">z</span> test is <span class="math inline">P = \Phi(−1.91) = 0.028</span>.</p>
+</span> The <span class="math inline">P</span>-value for this lower-tailed <span class="math inline">z</span> test is <span class="math display">P = \Phi(−1.91) = 0.028</span>.</p>
 </section>
-<section id="example-churhill-5n" class="slide level2">
-<h2>Example: Churhill 5/n</h2>
+<section id="example-churchill-5n" class="slide level2">
+<h2>Example: Churchill 5/n</h2>
 <p>Since <span class="math inline">P &lt; 0.10 = \alpha</span>, we reject the null hypothesis at the <span class="math inline">0.05</span> level.</p>
 <div class="warningblock">
 <p>What does this mean in words? Always place the result of the hypothesis test in the context of the problem!</p>
 </div>
 </section>
-<section id="example-churhill-6n-conclusion" class="slide level2">
-<h2>Example: Churhill 6/n (conclusion)</h2>
+<section id="example-churchill-6n-conclusion" class="slide level2">
+<h2>Example: Churchill 6/n (conclusion)</h2>
 <p>The evidence for concluding that the true proportion is different from <span class="math inline">p_0 = 0.5</span> at the <span class="math inline">0.10</span> level is compelling.</p>
 </section></section>
 <section id="summary" class="title-slide slide level1 center">
@@ -1078,18 +1079,7 @@ z &amp;= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1121,7 +1111,29 @@ z &amp;= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1129,7 +1141,7 @@ z &amp;= \frac{\widehat{p} - p_0}{\sqrt{p_0 (1-p_0) / m}} \\
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
